@@ -1,4 +1,2 @@
-const About = () => {
-  return <div>Hello!!</div>;
-};
+const About = () => {};
 export default About;
