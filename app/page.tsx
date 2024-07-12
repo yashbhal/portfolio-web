@@ -1,3 +1,6 @@
-const Home = () => {};
+// app/page.tsx
+const Home = () => {
+  return <div>Hello!</div>;
+};
 
 export default Home;
