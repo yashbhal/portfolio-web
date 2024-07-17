@@ -18,7 +18,7 @@ const GlassCard: React.FC<CardProps> = ({
   link,
   isProject,
 }) => (
-  <div className="card glass w-full">
+  <div className="card glass w-full bg-base-300 text-base-content">
     <figure>
       <Image
         src={imageUrl}

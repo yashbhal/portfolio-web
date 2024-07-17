@@ -4,7 +4,7 @@ const workData = {
         id: 1,
         title: "Project 1",
         description: "Description for Project 1",
-        imageUrl: "/images/project1.jpg",
+        imageUrl: "/github-icon.svg",
         link: "/project1",
       },
       {

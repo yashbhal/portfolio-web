@@ -21,11 +21,6 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/Builds" className="text-xl font-light">
-              Builds
-            </Link>
-          </li>
-          <li>
             <Link href="/Blog" className="text-xl font-light">
               Blog
             </Link>
