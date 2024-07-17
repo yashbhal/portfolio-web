@@ -11,7 +11,7 @@ const Footer = () => {
           height={50}
           className="fill-current"
         />
-        <p>Copyright © {new Date().getFullYear()} - All rights reserved</p>
+        <p>© {new Date().getFullYear()} - Yash Bhalchandra</p>
       </aside>
       <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
         <a
