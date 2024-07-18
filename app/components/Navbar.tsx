@@ -11,17 +11,17 @@ const Navbar = () => {
       <div className="flex-none">
         <ul className="menu menu-horizontal">
           <li>
-            <Link href="/About" className="text-xl font-light">
+            <Link href="/About" className="text-xl">
               About
             </Link>
           </li>
           <li>
-            <Link href="/Work" className="text-xl font-light">
+            <Link href="/Work" className="text-xl">
               Work
             </Link>
           </li>
           <li>
-            <Link href="/Blog" className="text-xl font-light">
+            <Link href="/Blog" className="text-xl">
               Blog
             </Link>
           </li>
