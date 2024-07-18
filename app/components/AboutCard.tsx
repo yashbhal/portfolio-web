@@ -13,25 +13,30 @@ const AboutCard = () => {
       <div className="card-body text-center">
         <h1 className="text-3xl font-bold mb-4">More about Yash</h1>
         <p className="mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae
-          dui in mauris tempor fermentum.
+          I graduated from Arizona State University with an undergraduate degree
+          in Computer Science and have experience working a software tester in
+          the automotive industry at KPIT, and then working as a application
+          developer for almost 2 years in the world of embedded products at
+          Microchip Technology.
+        </p>
+        <p className="mb-4">
+          Currently, I am a graduate student studying Computer Science at
+          Georgia Institute of Technology. I love working in interdisciplinary
+          teams towards building creative and intuitive products that solve
+          problems.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4">
             <h2 className="text-xl font-semibold">Personal Interests</h2>
-            <p>Hiking, Reading, Coding, Music</p>
+            <p>Soccer | Art | Reading</p>
           </div>
           <div className="p-4">
             <h2 className="text-xl font-semibold">Currently Learning</h2>
-            <p>Next.js, TypeScript, GraphQL</p>
-          </div>
-          <div className="p-4">
-            <h2 className="text-xl font-semibold">Areas of Expertise</h2>
-            <p>Web Development, UI/UX Design, Backend Development</p>
+            <p>Artificial Intelligence | Python | Next.js</p>
           </div>
           <div className="p-4">
             <h2 className="text-xl font-semibold">Current Projects</h2>
-            <p>Portfolio Website, E-commerce App, Blogging Platform</p>
+            <p>Portfolio Website | Grocery List Generator</p>
           </div>
         </div>
       </div>
