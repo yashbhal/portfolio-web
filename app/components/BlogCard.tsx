@@ -21,7 +21,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
         <p className="text-sm text-gray-500">{date}</p>
         <p className="my-2">{description}</p>
         <div className="card-actions justify-end">
-          <Link href={`/blog/${slug}`} className="btn btn-primary">
+          <Link href={`/Blog/${slug}`} className="btn btn-primary">
             Read More
           </Link>
         </div>

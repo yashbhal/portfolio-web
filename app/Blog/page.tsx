@@ -2,8 +2,6 @@ import BlogLayout from "../components/BlogLayout";
 import BlogCard from "../components/BlogCard";
 import { getSortedPostsData } from "./posts";
 
-export const revalidate = 10; // Revalidate every 10 seconds
-
 const BlogPage = async () => {
   const allPostsData = getSortedPostsData();
 
