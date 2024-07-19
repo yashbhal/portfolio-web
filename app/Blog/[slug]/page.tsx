@@ -13,11 +13,13 @@ const BlogPostPage = async ({ params }: BlogPostProps) => {
 
   return (
     <BlogLayout>
-      <article className="prose lg:prose-xl">
-        <h1>{post.title}</h1>
-        <p className="text-sm text-gray-500">{post.date}</p>
-        <div dangerouslySetInnerHTML={{ __html: marked(post.content) }} />
-      </article>
+      <div className="card glass bg-base-300 text-base-content shadow-lg p-6">
+        <article className="prose lg:prose-xl">
+          <h1 className="card-title">{post.title}</h1>
+          <p className="text-sm text-gray-500">{post.date}</p>
+          <div dangerouslySetInnerHTML={{ __html: marked(post.content) }} />
+        </article>
+      </div>
     </BlogLayout>
   );
 };
