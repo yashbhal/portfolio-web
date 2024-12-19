@@ -6,7 +6,7 @@ const workData = {
         "Advanced Indoor Scene Segmentation Using Open Vocabulary Classification",
       description:
         "Led development of an advanced 3D scene understanding system that achieved 67.8% accuracy in open-vocabulary object classification across 250 indoor object categories, by integrating Semantic SAM for segmentation and SigLIP for classification.",
-      imageUrl: "/work/software-development.jpg",
+      imageUrl: "/work/indoor-proj.png",
       link: "https://loggs.github.io/cs7641-project-proposal/",
     },
     {
@@ -14,7 +14,7 @@ const workData = {
       title: "Passive Haptic Stroke Rehabilitation Games",
       description:
         "(No link) Developed and conducted user testing for two Unity and Mediapipe based rehabilitation games, designed to use gestures to measure upper limb mobility improvements in stroke and sclerosis patients using a novel vibrotactile glove.",
-      imageUrl: "/work/software-development.jpg",
+      imageUrl: "/work/rehab-games-proj.png",
       link: "https://github.com/yashbhal/",
     },
     {
@@ -22,7 +22,7 @@ const workData = {
       title: "Privacy Focused AI Journal Application",
       description:
         "(In Dev) Creating a secure digital journaling system with Next.js and PostgreSQL database integration. Leverages AI capabilities using Langchain and Llama to transform user entries into entertaining monthly adventures.",
-      imageUrl: "/work/software-development.jpg",
+      imageUrl: "/work/journal-proj.webp",
       link: "https://github.com/yashbhal/",
     },
     {
