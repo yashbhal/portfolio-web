@@ -7,12 +7,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui"],
+        heading: ["var(--font-montserrat)", "system-ui"],
+        display: ["var(--font-space-grotesk)", "system-ui"],
+      },
+    },
   },
-  plugins: [
-    require('daisyui'),
-  ],
+  plugins: [require("daisyui")],
   daisyui: {
     themes: ["cupcake"],
   },
 };
+
 export default config;
