@@ -11,7 +11,6 @@ const AboutCard = () => {
         />
       </figure>
       <div className="card-body text-center">
-        <h1 className="text-3xl font-bold mb-4">More about Yash</h1>
         <p className="mb-4">
           I have around 2 years of experience working full-time as a software
           developer, and an undergraduate degree in Computer Science from
