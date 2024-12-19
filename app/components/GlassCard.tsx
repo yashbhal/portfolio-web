@@ -1,6 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
-
 interface CardProps {
   title?: string;
   company?: string;
@@ -8,6 +5,7 @@ interface CardProps {
   imageUrl: string;
   link: string;
   isProject: boolean;
+  className?: string;
 }
 
 const GlassCard: React.FC<CardProps> = ({
@@ -17,26 +15,35 @@ const GlassCard: React.FC<CardProps> = ({
   imageUrl,
   link,
   isProject,
+  className,
 }) => (
-  <div className="card glass w-full bg-base-300 text-base-content">
-    <figure>
-      <Image
+  <div className={`card glass h-full flex flex-col ${className || ""}`}>
+    <figure className="relative h-48">
+      <img
         src={imageUrl}
-        alt={title || company || "Image"}
-        width={400}
-        height={300}
-        className="object-cover w-full"
+        alt={title || company}
+        className="w-full h-full object-cover"
       />
     </figure>
-    <div className="card-body">
-      <h2 className="card-title">{title || company || "Untitled"}</h2>
-      <p>{description}</p>
-      <div className="card-actions justify-end">
-        <Link href={link}>
-          <button className="btn btn-primary">
-            {isProject ? "View Project" : "View Company"}
-          </button>
-        </Link>
+    <div className="card-body flex-grow">
+      <h3 className="text-xl font-semibold text-primary-content">
+        {isProject ? title : company}
+      </h3>
+      {!isProject && (
+        <h4 className="text-lg font-medium text-primary-content/90">{title}</h4>
+      )}
+      <p className="text-base text-primary-content/80 whitespace-pre-wrap">
+        {description}
+      </p>
+      <div className="card-actions justify-end mt-auto pt-4">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary"
+        >
+          Learn More
+        </a>
       </div>
     </div>
   </div>
