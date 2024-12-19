@@ -11,6 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Yash Bhalchandra",
   description: "Yash Bhalchandra Personal Website",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {

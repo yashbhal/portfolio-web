@@ -1,5 +1,5 @@
 ---
-title: "Learning Next.js"
+title: "Template Post 2"
 date: "2023-02-15"
 description: "An overview of my journey learning Next.js."
 ---
