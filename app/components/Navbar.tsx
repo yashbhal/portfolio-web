@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="navbar bg-primary text-base-content p-5">
+    <div className="navbar bg-primary text-base-content p-5 relative z-50">
       <div className="flex-1">
         <Link href="/" className="btn btn-ghost text-xl">
           Yash Bhalchandra

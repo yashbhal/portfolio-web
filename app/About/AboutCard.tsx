@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutCard = () => {
   return (
-    <div className="card glass shadow-lg bg-base-300 text-base-content">
+    <div className="card glass shadow-lg bg-base-300 text-base-content relative z-10">
       <figure className="p-10">
         <img
           src="/about_photo.png"
