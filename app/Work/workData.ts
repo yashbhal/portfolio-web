@@ -34,7 +34,7 @@ const workData = {
       link: "https://github.com/yashbhal/portfolio-web",
     },
     {
-      id: 2,
+      id: 5,
       title: "Grocery List Generator",
       description:
         "An application that sends you ingredients to shop for based on recipes you select for the week. Built with Python, and PyQt6",
@@ -42,8 +42,8 @@ const workData = {
       link: "https://github.com/yashbhal/grocery-list-generator",
     },
     {
-      id: 3,
-      title: "Movie Suggestor",
+      id: 6,
+      title: "Movie Recommender",
       description:
         "An older project that randomly suggests a movie to watch from the IMDB Top 250 Movies List. Built using Python and the BeautifulSoup library.",
       imageUrl: "/work/movie.jpg",
@@ -55,7 +55,7 @@ const workData = {
       id: 1,
       company: "Microchip Technology",
       description:
-        "Worked as part of the 16-bit Applications team, primarly developing new features, maintianing and improving the code for the 16-bit Bootloader libray, and the CryptoAuthentication Library.",
+        "Worked as part of the 16-bit Applications team, primarily developing new features, maintaining and improving the code for the 16-bit Bootloader Library, and the CryptoAuthentication Library.",
       imageUrl: "/work/microchip.jpg",
       link: "https://www.microchip.com/",
     },
