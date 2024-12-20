@@ -2,8 +2,7 @@ const workData = {
   projects: [
     {
       id: 1,
-      title:
-        "Advanced Indoor Scene Segmentation Using Open Vocabulary Classification",
+      title: "Open Vocab Predictions for Indoor Scenes",
       description:
         "Led development of an advanced 3D scene understanding system that achieved 67.8% accuracy in open-vocabulary object classification across 250 indoor object categories, by integrating Semantic SAM for segmentation and SigLIP for classification.",
       imageUrl: "/work/indoor-proj.png",
@@ -29,7 +28,7 @@ const workData = {
       id: 4,
       title: "Portfolio Website",
       description:
-        "A portfolio website to showcase personal projects, work experience, and a blog. Built with Next.js, Typescript, Tailwind CSS, and DaisyUI",
+        "A portfolio website to showcase personal projects, work experience, and a blog. Built with Next.js, Typescript, Tailwind CSS, and DaisyUI.",
       imageUrl: "/work/software-development.jpg",
       link: "https://github.com/yashbhal/portfolio-web",
     },
@@ -37,7 +36,7 @@ const workData = {
       id: 5,
       title: "Grocery List Generator",
       description:
-        "An application that sends you ingredients to shop for based on recipes you select for the week. Built with Python, and PyQt6",
+        "An application that sends you ingredients to shop for based on recipes you select for the week. Built with Python, and PyQt6.",
       imageUrl: "/work/grocery-list.jpg",
       link: "https://github.com/yashbhal/grocery-list-generator",
     },
@@ -61,7 +60,7 @@ const workData = {
     },
     {
       id: 2,
-      title: "KPIT",
+      company: "KPIT",
       description:
         "Worked in an Agile team to design and develop test scripts to automate the functional and stability testing of automotive infotainment systems.",
       imageUrl: "/work/software-testing.jpg",
@@ -69,7 +68,7 @@ const workData = {
     },
     {
       id: 3,
-      title: "Immersive Creation Studio",
+      company: "Immersive Creation Studio",
       description:
         "Building prototypical immersive XR platforms for learning environments.",
       imageUrl: "/work/augmented-reality.jpg",
@@ -77,7 +76,7 @@ const workData = {
     },
     {
       id: 4,
-      title: "Meteor Studio",
+      company: "Meteor Studio",
       description:
         "Worked on the design and development of an augmented reality software using Unity Game Engine for iOS, Android, and Microsoft Hololens.",
       imageUrl: "/work/virtual-reality.jpg",
