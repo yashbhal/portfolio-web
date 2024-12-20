@@ -33,7 +33,7 @@ const AboutCard = () => {
             <h2 className="text-xl font-semibold">Current Projects</h2>
             <p>
               QuestLife - A Privacy Focused Journalling App that brings you a
-              new perspective
+              new perspective on your life.
             </p>
           </div>
         </div>

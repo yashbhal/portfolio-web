@@ -12,7 +12,7 @@ const workData = {
       id: 2,
       title: "Passive Haptic Stroke Rehabilitation Games",
       description:
-        "(No link) Developed and conducted user testing for two Unity and Mediapipe based rehabilitation games, designed to use gestures to measure upper limb mobility improvements in stroke and sclerosis patients using a novel vibrotactile glove.",
+        "(Private Project) Developed and conducted user testing for two Unity and Mediapipe based rehabilitation games, designed to use gestures to measure upper limb mobility improvements in stroke and sclerosis patients using a novel vibrotactile glove.",
       imageUrl: "/work/rehab-games-proj.png",
       link: "https://github.com/yashbhal/",
     },
@@ -20,7 +20,7 @@ const workData = {
       id: 3,
       title: "Privacy Focused AI Journal Application",
       description:
-        "(In Dev) Creating a secure digital journaling system with Next.js and PostgreSQL database integration. Leverages AI capabilities using Langchain and Llama to transform user entries into entertaining monthly adventures.",
+        "(In Development) Creating a secure digital journaling system with Next.js and PostgreSQL database integration. Leverages AI capabilities using Langchain and Llama to transform user entries into entertaining monthly adventures.",
       imageUrl: "/work/journal-proj.webp",
       link: "https://github.com/yashbhal/",
     },
@@ -54,7 +54,7 @@ const workData = {
       id: 1,
       company: "Microchip Technology",
       description:
-        "Worked as part of the 16-bit Applications team, primarily developing new features, maintaining and improving the code for the 16-bit Bootloader Library, and the CryptoAuthentication Library.",
+        "Worked as part of the 16-bit Applications team, primarily developing new features, maintaining and improving code for the 16-bit Bootloader Library, and the CryptoAuthentication Library.",
       imageUrl: "/work/microchip.jpg",
       link: "https://www.microchip.com/",
     },
