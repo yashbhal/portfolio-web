@@ -25,22 +25,34 @@ const GlassCard: React.FC<CardProps> = ({
         className="w-full h-full object-cover"
       />
     </figure>
-    <div className="card-body flex-grow">
-      <h3 className="text-xl font-semibold text-primary-content">
-        {isProject ? title : company}
-      </h3>
-      {!isProject && (
-        <h4 className="text-lg font-medium text-primary-content/90">{title}</h4>
-      )}
-      <p className="text-base text-primary-content/80 whitespace-pre-wrap">
-        {description}
-      </p>
-      <div className="card-actions justify-end mt-auto pt-4">
+    <div className="card-body flex-grow flex flex-col">
+      <div className="h-16 mb-2">
+        {" "}
+        {/* Fixed height for title section */}
+        <h3 className="text-xl font-heading font-semibold text-primary-content leading-tight">
+          {isProject ? title : company}
+        </h3>
+        {!isProject && (
+          <h4 className="text-lg font-heading font-medium text-primary-content/90 leading-tight mt-1">
+            {title}
+          </h4>
+        )}
+      </div>
+
+      <div className="flex-grow">
+        {" "}
+        {/* Allows description to take necessary space */}
+        <p className="text-base font-sans text-primary-content/80">
+          {description}
+        </p>
+      </div>
+
+      <div className="card-actions justify-end mt-4">
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary"
+          className="btn btn-primary font-heading"
         >
           Learn More
         </a>
