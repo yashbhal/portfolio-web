@@ -2,41 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Modern Color System */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Base Colors - Minimal black/white system */
+  --color-surface-100: 255 255 255; /* Pure white */
+  --color-surface-200: 248 250 252; /* Light gray */
+  --color-surface-300: 241 245 249; /* Slightly darker gray */
+
+  /* Text Colors - High contrast */
+  --color-text-primary: 0 0 0; /* Pure black */
+  --color-text-secondary: 51 51 51; /* Soft black */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Dark mode colors */
+[data-theme="dark"] {
+  --color-surface-100: 0 0 0; /* Pure black */
+  --color-surface-200: 23 23 23; /* Dark gray */
+  --color-surface-300: 38 38 38; /* Slightly lighter gray */
+
+  --color-text-primary: 255 255 255; /* Pure white */
+  --color-text-secondary: 229 229 229; /* Soft white */
 }
 
+/* Base Styles */
 body {
-  @apply font-sans;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply font-sans antialiased bg-base-100;
+  color: rgb(var(--color-text-primary));
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-heading;
+/* Typography System */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading font-semibold tracking-tight;
 }
 
-.special-display {
-  @apply font-display;
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl;
+}
+h2 {
+  @apply text-3xl md:text-4xl lg:text-5xl;
+}
+h3 {
+  @apply text-2xl md:text-3xl;
+}
+h4 {
+  @apply text-xl md:text-2xl;
 }
 
+/* Modern Link Styles */
+.link-underline {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] 
+         after:w-full after:origin-left after:scale-x-0 after:bg-current 
+         after:transition-transform after:duration-300 
+         hover:after:scale-x-100;
+}
+
+/* Smooth Transitions */
+.transition-standard {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Card and Container Styles */
+.glass-effect {
+  @apply backdrop-blur-md bg-base-200/80;
+}
+
+.container-responsive {
+  @apply w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+/* Animation Utilities */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

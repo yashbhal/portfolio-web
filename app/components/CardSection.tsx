@@ -1,5 +1,5 @@
+// components/CardSection.tsx
 import GlassCard from "./GlassCard";
-
 interface SectionProps {
   title: string;
   items: {
@@ -7,18 +7,21 @@ interface SectionProps {
     title?: string;
     company?: string;
     description: string;
-    imageUrl: string;
+    technologies?: string[];
+    imageUrl?: string;
     link: string;
+    startDate?: string;
+    endDate?: string;
   }[];
   isProject: boolean;
 }
 
 const Section: React.FC<SectionProps> = ({ title, items, isProject }) => (
-  <section className="w-full max-w-5xl mb-8 mx-auto">
-    <h1 className="text-3xl font-heading font-bold mb-8 pb-2 border-b-2 border-primary-content/20 text-center">
+  <section className="w-full">
+    <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold mb-12 text-center">
       {title}
-    </h1>
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
       {items.map((item) => (
         <GlassCard key={item.id} {...item} isProject={isProject} />
       ))}

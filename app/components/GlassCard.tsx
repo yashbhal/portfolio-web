@@ -1,60 +1,92 @@
+// components/GlassCard.tsx
 interface CardProps {
   title?: string;
   company?: string;
   description: string;
-  imageUrl: string;
+  technologies?: string[];
+  imageUrl?: string;
   link: string;
   isProject: boolean;
-  className?: string;
+  startDate?: string;
+  endDate?: string;
 }
 
 const GlassCard: React.FC<CardProps> = ({
   title,
   company,
   description,
-  imageUrl,
+  technologies = [],
   link,
   isProject,
-  className,
+  startDate,
+  endDate,
 }) => (
-  <div className={`card glass h-full flex flex-col ${className || ""}`}>
-    <figure className="relative h-48">
-      <img
-        src={imageUrl}
-        alt={title || company}
-        className="w-full h-full object-cover"
-      />
-    </figure>
-    <div className="card-body flex-grow flex flex-col">
-      <div className="h-16 mb-2">
-        {" "}
-        {/* Fixed height for title section */}
-        <h3 className="text-xl font-heading font-semibold text-primary-content leading-tight">
-          {isProject ? title : company}
-        </h3>
-        {!isProject && (
-          <h4 className="text-lg font-heading font-medium text-primary-content/90 leading-tight mt-1">
+  <div className="card bg-base-200 hover:bg-base-300 transition-all duration-300 group">
+    <div className="card-body">
+      {/* Header */}
+      <div className="mb-4">
+        {isProject ? (
+          <h3 className="card-title font-heading text-xl text-base-content">
             {title}
-          </h4>
+          </h3>
+        ) : (
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <h3 className="font-heading text-xl text-base-content">
+                {company}
+              </h3>
+              {startDate && (
+                <span className="text-sm text-base-content/60">
+                  {startDate} — {endDate || "Present"}
+                </span>
+              )}
+            </div>
+            <p className="text-base-content/70">{title}</p>
+          </div>
         )}
       </div>
 
-      <div className="flex-grow">
-        {" "}
-        {/* Allows description to take necessary space */}
-        <p className="text-base font-sans text-primary-content/80">
-          {description}
-        </p>
-      </div>
+      {/* Description */}
+      <p className="text-base-content/70 mb-6">{description}</p>
 
-      <div className="card-actions justify-end mt-4">
+      {/* Technologies */}
+      {technologies.length > 0 && (
+        <div className="flex flex-wrap gap-2 mb-6">
+          {technologies.map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 text-sm rounded-md bg-base-300 text-base-content/70"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Action */}
+      <div className="card-actions justify-end mt-auto">
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary font-heading"
+          className="btn btn-sm btn-outline border-base-content/20 
+                   hover:bg-base-content hover:text-base-100
+                   transition-all duration-300"
         >
           Learn More
+          <svg
+            className="w-4 h-4 ml-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
         </a>
       </div>
     </div>
