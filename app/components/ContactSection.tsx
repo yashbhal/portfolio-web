@@ -5,7 +5,7 @@ export const ContactSection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-            Let's Connect
+            {`Let's Connect`}
           </h2>
           <p className="text-lg text-base-content/80 mb-8">
             Feel free to reach out to me on LinkedIn or at{" "}
@@ -23,11 +23,14 @@ export const ContactSection = () => {
               href="https://linkedin.com/in/yashbhal"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary"
+              className="btn btn-outline text-base-content hover:bg-base-content hover:text-base-100"
             >
               LinkedIn
             </a>
-            <a href="mailto:yashbhal@gatech.edu" className="btn btn-outline">
+            <a
+              href="mailto:yashbhal@gatech.edu"
+              className="btn btn-outline text-base-content hover:bg-base-content hover:text-base-100"
+            >
               Email Me
             </a>
           </div>

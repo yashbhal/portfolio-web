@@ -10,7 +10,7 @@ export const HeroSection = () => {
           <div className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-lg md:text-xl font-medium text-base-content/80">
-                Hello, I'm
+                Hello, {`I'm`}
               </h2>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-base-content">
                 Yash Bhalchandra
@@ -22,8 +22,9 @@ export const HeroSection = () => {
             </h2>
 
             <p className="text-lg text-base-content/80 max-w-xl">
-              An insatiably curious developer passionate about designing and
-              building solutions that make a difference.
+              Building innovative solutions with 2 years of professional
+              experience. Currently pursuing MS in Computer Science at Georgia
+              Tech.
             </p>
 
             <div className="flex gap-4 pt-4">
@@ -52,7 +53,7 @@ export const HeroSection = () => {
                 alt="Yash Bhalchandra"
                 width={320}
                 height={320}
-                className="rounded-2xl object-cover shadow-lg"
+                className="rounded-2xl object-cover shadow-2xl"
                 priority
               />
             </div>

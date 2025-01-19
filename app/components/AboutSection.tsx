@@ -9,8 +9,8 @@ export const AboutSection = () => {
             {/* Left Column - Main Text */}
             <div className="space-y-8">
               <div className="space-y-2">
-                <h4 className="text-primary font-medium">ABOUT ME</h4>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold">
+                <h4 className="text-base-content/80 font-medium">ABOUT ME</h4>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-base-content">
                   Software Developer with a passion for innovation
                 </h2>
               </div>
@@ -19,27 +19,30 @@ export const AboutSection = () => {
                 <p className="leading-relaxed">
                   I have 2 years of experience working full-time as a software
                   developer, and an undergraduate degree in Computer Science
-                  from Arizona State University. I'm currently pursuing a
-                  masters in Computer Science at Georgia Institute of
-                  Technology,
+                  from Arizona State University.
                 </p>
                 <p className="leading-relaxed">
-                  I love working in interdisciplinary teams towards building
-                  products that people would enjoy using.
+                  Currently pursuing MS in Computer Science at Georgia Institute
+                  of Technology, actively seeking internship opportunities for
+                  Spring 2025.
                 </p>
               </div>
 
               {/* Quick Facts */}
               <div className="pt-4 grid grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Education</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">
+                    Education
+                  </h3>
                   <ul className="space-y-2 text-base-content/80">
                     <li>MS Computer Science @ Georgia Tech</li>
                     <li>BS Computer Science @ ASU</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">Beyond Tech</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-base-content">
+                    Beyond Tech
+                  </h3>
                   <ul className="space-y-2 text-base-content/80">
                     <li>Soccer</li>
                     <li>Digital Art</li>
@@ -52,7 +55,7 @@ export const AboutSection = () => {
             {/* Right Column - Current Focus */}
             <div className="bg-base-200 rounded-2xl p-8">
               <div className="space-y-6">
-                <h3 className="text-2xl font-heading font-semibold">
+                <h3 className="text-2xl font-heading font-semibold text-base-content">
                   Current Focus
                 </h3>
 
@@ -75,7 +78,7 @@ export const AboutSection = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <h4 className="font-medium">Career </h4>
+                    <h4 className="font-medium">Career</h4>
                     <p className="text-base-content/80">
                       Seeking internship opportunities where I can contribute to
                       innovative projects while expanding my technical
