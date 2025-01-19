@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-const postsDirectory = path.join(process.cwd(), 'app/BlogPosts');
+const postsDirectory = path.join(process.cwd(), "app/BlogPosts");
 
 interface PostData {
   slug: string;
@@ -12,12 +12,12 @@ interface PostData {
   content: string;
 }
 
-export function getSortedPostsData(): Omit<PostData, 'content'>[] {
+export function getSortedPostsData(): Omit<PostData, "content">[] {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, '');
+    const slug = fileName.replace(/\.md$/, "");
     const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents);
 
     return {
@@ -27,13 +27,15 @@ export function getSortedPostsData(): Omit<PostData, 'content'>[] {
       description: matterResult.data.description,
     };
   });
-  
-  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+
+  return allPostsData.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 }
 
 export function getPostData(slug: string): PostData {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
 
   return {

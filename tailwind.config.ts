@@ -17,7 +17,18 @@ const config: Config = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["cupcake"],
+    themes: [
+      {
+        light: {
+          primary: "#334155", // Softer slate for primary actions
+          "primary-content": "#ffffff",
+          "base-100": "#fafaf9", // Warm off-white background
+          "base-200": "#f5f5f4", // Slightly darker warm gray
+          "base-300": "#e7e5e4", // Even darker warm gray
+          "base-content": "#334155", // Slate for text (easier on eyes)
+        },
+      },
+    ],
   },
 };
 
