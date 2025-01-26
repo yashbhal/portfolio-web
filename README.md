@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Project Overview
+A modern, minimalist portfolio website built with Next.js, TypeScript, and TailwindCSS. The website serves as a professional showcase for a software developer, featuring work experience, projects, and a blog.
 
-## Getting Started
+## Technical Stack
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: TailwindCSS with DaisyUI
+- **Fonts**: Google Fonts (Inter, Montserrat)
+- **Deployment**: Vercel
 
-First, run the development server:
+## Project Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Core Configuration Files
+```
+├── tailwind.config.ts      # TailwindCSS and DaisyUI configuration
+├── next.config.js          # Next.js configuration
+├── tsconfig.json           # TypeScript configuration
+└── package.json           # Project dependencies and scripts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### App Directory Structure Overview
+```
+app/
+├── layout.tsx              # Root layout with common elements
+├── page.tsx               # Home page
+├── globals.css            # Global styles
+├── Work/                  # Work experience and projects page
+│   ├── page.tsx
+│   └── workData.ts        # Work and project data
+├── Blog/                  # Blog section
+│   └── page.tsx
+└── components/            # Reusable components
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Components
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Layout Components
+1. **Navbar.tsx**
+   - Responsive navigation bar
+   - Mobile-friendly hamburger menu
+   - Smooth scroll transitions
+   - Fixed positioning with backdrop blur
 
-## Learn More
+2. **Footer.tsx**
+   - Social media links
+   - Contact information
+   - Consistent styling with the theme
 
-To learn more about Next.js, take a look at the following resources:
+### Page Components
+1. **HeroSection.tsx**
+   - Main landing section
+   - Personal introduction
+   - Call-to-action buttons
+   - Professional image
+   - Responsive grid layout
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **AboutSection.tsx**
+   - Professional background
+   - Education details
+   - Current focus areas
+   - Personal interests
+   - Two-column layout for better information organization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **WorkCard.tsx** & **CardSection.tsx**
+   - Reusable card components for work experiences and projects
+   - Consistent styling
+   - Technology tags
+   - Date display for work experiences
+   - Learn More buttons
+   - Glass effect styling
 
-## Deploy on Vercel
+## Design Decisions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Color Scheme
+- **Light Theme**
+  - Clean, minimal color palette
+  - Off-white background for reduced eye strain
+  - Subtle grays for depth
+  - High contrast for readability
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Typography
+- **Montserrat**: Headings
+  - Professional appearance
+  - Good readability at larger sizes
+- **Inter**: Body text
+  - Modern, clean sans-serif
+  - Excellent readability at all sizes
+
+### Layout Philosophy
+1. **Spacing**
+   - Consistent padding and margins
+   - Proper white space for readability
+   - Responsive spacing using Tailwind's spacing scale
+
+2. **Responsiveness**
+   - Mobile-first approach
+   - Breakpoints:
+     - sm: 640px
+     - md: 768px
+     - lg: 1024px
+   - Flexible grid systems
+
+3. **Visual Hierarchy**
+   - Clear heading structure
+   - Consistent text sizes
+   - Strategic use of font weights
+   - Subtle opacity variations for depth
+
+## Component Architecture
+
+### Card System
+```typescript
+interface CardProps {
+  title?: string;
+  company?: string;
+  description: string;
+  technologies?: string[];
+  link: string;
+  isProject: boolean;
+  startDate?: string;
+  endDate?: string;
+}
+```
+- Flexible card system for both projects and work experience
+- Optional fields for different use cases
+- Consistent styling with hover effects
+- Technology tag system
+
+### Section Layout
+- Container system for consistent width
+- Responsive padding
+- Maximum width constraints
+- Centered content
+
+## Performance Considerations
+
+1. **Image Optimization**
+   - Next.js Image component for automatic optimization
+   - Proper sizing and priority loading
+   - Responsive image sizes
+
+2. **Loading States**
+   - Loading screen for initial page load
+   - Smooth transitions between states
+
+3. **Code Organization**
+   - Component-based architecture
+   - Clear separation of concerns
+   - Reusable components and interfaces
+
+## UI/UX Decisions
+
+1. **Navigation**
+   - Simple, clear navigation
+   - Mobile-friendly menu
+   - Smooth scrolling
+   - Fixed navbar for easy access
+
+2. **Content Presentation**
+   - Clear visual hierarchy
+   - Scannable content
+   - Important information highlighted
+   - Consistent styling
+
+3. **Interactive Elements**
+   - Subtle hover effects
+   - Clear call-to-action buttons
+   - Accessible links and buttons
+
+## Future Considerations
+1. **Blog Integration**
+   - Potential for external blog integration
+   - Consistent styling with main site
+
+2. **Dark Mode**
+   - Future implementation planned
+   - Color system ready for theme extension
