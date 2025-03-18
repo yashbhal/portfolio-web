@@ -22,9 +22,11 @@ export const HeroSection = () => {
             </h2>
 
             <p className="text-lg text-base-content/80 max-w-xl">
-              Building innovative solutions with 2 years of professional
-              experience. Currently pursuing MS in Computer Science at Georgia
-              Tech.
+              <ul>
+                <li>● MS CS at Georgia Tech </li>
+                <li>● Over 2 years of software development experience </li>
+                <li>● Actively looking for interships</li>
+              </ul>
             </p>
 
             <div className="flex gap-4 pt-4">
