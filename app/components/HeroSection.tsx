@@ -23,9 +23,9 @@ export const HeroSection = () => {
 
             <p className="text-lg text-base-content/80 max-w-xl">
               <ul>
-                <li>● MS CS at Georgia Tech </li>
-                <li>● Over 2 years of software development experience </li>
-                <li>● Actively looking for interships</li>
+                <li>● MS CS at Georgia Tech</li>
+                <li>● Over 2 years of software development experience</li>
+                <li>● Actively looking for internships</li>
               </ul>
             </p>
 
