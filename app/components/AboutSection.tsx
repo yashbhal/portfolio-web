@@ -22,7 +22,7 @@ export const AboutSection = () => {
                   from Arizona State University.
                 </p>
                 <p className="leading-relaxed">
-                  I'm currently pursuing MS in Computer Science at Georgia
+                  I am currently pursuing MS in Computer Science at Georgia
                   Institute of Technology, and actively seeking internship
                   opportunities for Summer 2025.
                 </p>
