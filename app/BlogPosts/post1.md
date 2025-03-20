@@ -1,6 +1,6 @@
 ---
 title: "Favorite Books - 2024"
-date: "2025-01-01"
+date: "2025-01-31"
 description: "Short reviews of the books I loved most in 2024."
 ---
 
