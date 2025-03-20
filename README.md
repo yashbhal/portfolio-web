@@ -167,11 +167,15 @@ interface CardProps {
    - Clear call-to-action buttons
    - Accessible links and buttons
 
-## Future Considerations
+## Future Plans and Potential Feature Additions
 1. **Blog Integration**
    - Potential for external blog integration
-   - Consistent styling with main site
 
 2. **Dark Mode**
    - Future implementation planned
    - Color system ready for theme extension
+
+3. **Additional Sections**
+   - A sleek contact form
+   - A resume page
+   - A page that displays photos/experiences from other hobbies
