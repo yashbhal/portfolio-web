@@ -1,7 +1,17 @@
+import { link } from "fs";
+
 const workData = {
   projects: [
     {
       id: 1,
+      title: "Stardew Sage",
+      description:
+        "Stardew Sage is a open-source, responsive AI chatbot that users can chat with about Stardew Valley. The sage is powered by Gemini 1.5 Flash, and built with Next.js, Tailwind CSS, and Typescript.",
+      technologies: ["Typescript", "Next.js", "Verel", "Google Gemini", "LLM"],
+      link: "https://stardew-sage.vercel.app/",
+    },
+    {
+      id: 2,
       title: "Open Vocab Predictions for Indoor Scenes",
       description:
         "Led development of an advanced 3D scene understanding system that achieved 67.8% accuracy in open-vocabulary object classification across 250 indoor object categories, by integrating Semantic SAM for segmentation and SigLIP for classification.",
@@ -15,7 +25,7 @@ const workData = {
       link: "https://loggs.github.io/cs7641-project-proposal/",
     },
     {
-      id: 2,
+      id: 3,
       title: "Passive Haptic Stroke Rehabilitation Games",
       description:
         "(Private Project) Developed and conducted user testing for two Unity and Mediapipe based rehabilitation games, designed to use gestures to measure upper limb mobility improvements in stroke and sclerosis patients using a novel vibrotactile glove.",
@@ -23,7 +33,7 @@ const workData = {
       link: "https://github.com/yashbhal/",
     },
     {
-      id: 3,
+      id: 4,
       title: "Privacy Focused AI Journal Application",
       description:
         "(In Development) Creating a secure digital journaling system with Next.js and PostgreSQL database integration. Leverages AI capabilities using Langchain and Llama to transform user entries into entertaining monthly adventures.",
@@ -31,7 +41,7 @@ const workData = {
       link: "https://github.com/yashbhal/",
     },
     {
-      id: 4,
+      id: 5,
       title: "Portfolio Website",
       description:
         "A portfolio website to showcase personal projects, work experience, and a blog. Built with Next.js, Typescript, Tailwind CSS, and DaisyUI.",
@@ -39,7 +49,7 @@ const workData = {
       link: "https://github.com/yashbhal/portfolio-web",
     },
     {
-      id: 5,
+      id: 6,
       title: "Grocery List Generator",
       description:
         "An application that sends you ingredients to shop for based on recipes you select for the week. Built with Python, and PyQt6.",
@@ -47,7 +57,7 @@ const workData = {
       link: "https://github.com/yashbhal/grocery-list-generator",
     },
     {
-      id: 6,
+      id: 7,
       title: "Movie Recommender",
       description:
         "A project that randomly suggests a movie to watch from the IMDB Top 250 Movies List. Built using Python and the BeautifulSoup library.",
@@ -58,6 +68,16 @@ const workData = {
   experiences: [
     {
       id: 1,
+      company: "ViTAL Lab at Georgia Tech & Emory University",
+      description:
+        "Building a sensor-driven mobile application with React Native Expo that leverages device sensors and hardware capabilities for extensive data collection across iOS and Android platforms.",
+      technologies: ["React Native", "Expo", "Git"],
+      link: "https://kwonvitallab.github.io/",
+      startDate: "August 2024",
+      endDate: "Present",
+    },
+    {
+      id: 2,
       company: "Microchip Technology",
       description:
         "Worked as part of the 16-bit Applications team, primarily developing new features, maintaining and improving code for the 16-bit Bootloader Library, and the CryptoAuthentication Library.",
@@ -67,7 +87,7 @@ const workData = {
       endDate: "April 2024",
     },
     {
-      id: 2,
+      id: 3,
       company: "KPIT",
       description:
         "Worked in an Agile team to design and develop test scripts to automate the functional and stability testing of automotive infotainment systems.",
@@ -77,7 +97,7 @@ const workData = {
       endDate: "July 2022",
     },
     {
-      id: 3,
+      id: 4,
       company: "Immersive Creation Studio",
       description:
         "Building prototypical immersive XR platforms for learning environments.",
@@ -87,7 +107,7 @@ const workData = {
       endDate: "August 2021",
     },
     {
-      id: 4,
+      id: 5,
       company: "Meteor Studio",
       description:
         "Worked on the design and development of an augmented reality software using Unity Game Engine for iOS, Android, and Microsoft Hololens.",

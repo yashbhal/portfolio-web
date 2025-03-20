@@ -11,7 +11,7 @@ export const AboutSection = () => {
               <div className="space-y-2">
                 <h4 className="text-base-content/80 font-medium">ABOUT ME</h4>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold text-base-content">
-                  Software Developer with a passion for innovation
+                  I like building intuitive software that solves problems
                 </h2>
               </div>
 
@@ -22,9 +22,9 @@ export const AboutSection = () => {
                   from Arizona State University.
                 </p>
                 <p className="leading-relaxed">
-                  Currently pursuing MS in Computer Science at Georgia Institute
-                  of Technology, actively seeking internship opportunities for
-                  Spring 2025.
+                  I am currently pursuing MS in Computer Science at Georgia
+                  Institute of Technology, and actively seeking internship
+                  opportunities for Summer 2025.
                 </p>
               </div>
 
