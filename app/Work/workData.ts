@@ -1,20 +1,37 @@
-import { link } from "fs";
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  link: string;
+}
 
-const workData = {
+export interface Experience {
+  id: number;
+  company: string;
+  role?: string;
+  description: string;
+  technologies: string[];
+  link: string;
+  startDate: string;
+  endDate?: string;
+}
+
+const workData: { projects: Project[]; experiences: Experience[] } = {
   projects: [
     {
       id: 1,
       title: "Stardew Sage",
       description:
-        "Stardew Sage is a open-source, responsive AI chatbot that users can chat with about Stardew Valley. The sage is powered by Gemini 1.5 Flash, and built with Next.js, Tailwind CSS, and Typescript.",
-      technologies: ["Typescript", "Next.js", "Verel", "Google Gemini", "LLM"],
+        "Open-source AI companion for Stardew Valley fans powered by Gemini 1.5 Flash.",
+      technologies: ["TypeScript", "Next.js", "Vercel", "Google Gemini", "LLM"],
       link: "https://stardew-sage.vercel.app/",
     },
     {
       id: 2,
       title: "Open Vocab Predictions for Indoor Scenes",
       description:
-        "Led development of an advanced 3D scene understanding system that achieved 67.8% accuracy in open-vocabulary object classification across 250 indoor object categories, by integrating Semantic SAM for segmentation and SigLIP for classification.",
+        "67.8% accuracy indoor scene understanding pipeline integrating Semantic SAM and SigLIP.",
       technologies: [
         "Python",
         "PyTorch",
@@ -28,7 +45,7 @@ const workData = {
       id: 3,
       title: "Passive Haptic Stroke Rehabilitation Games",
       description:
-        "(Private Project) Developed and conducted user testing for two Unity and Mediapipe based rehabilitation games, designed to use gestures to measure upper limb mobility improvements in stroke and sclerosis patients using a novel vibrotactile glove.",
+        "Gesture-based Unity games for vibrotactile stroke rehab testing with Mediapipe tracking.",
       technologies: ["Python", "C#", "Figma", "Unity Engine", "Mediapipe"],
       link: "https://github.com/yashbhal/",
     },
@@ -36,15 +53,15 @@ const workData = {
       id: 4,
       title: "Privacy Focused AI Journal Application",
       description:
-        "(In Development) Creating a secure digital journaling system with Next.js and PostgreSQL database integration. Leverages AI capabilities using Langchain and Llama to transform user entries into entertaining monthly adventures.",
-      technologies: ["TypeScript", "SQL", "Next.js", "LLM", "LangChain"],
+        "Secure journaling platform that transforms entries into narratives using LangChain and Llama.",
+      technologies: ["TypeScript", "PostgreSQL", "Next.js", "LLM", "LangChain"],
       link: "https://github.com/yashbhal/",
     },
     {
       id: 5,
       title: "Portfolio Website",
       description:
-        "A portfolio website to showcase personal projects, work experience, and a blog. Built with Next.js, Typescript, Tailwind CSS, and DaisyUI.",
+        "Personal site for projects, writing, and career notes built with the modern web stack.",
       technologies: ["Next.js", "TypeScript", "TailwindCSS", "DaisyUI"],
       link: "https://github.com/yashbhal/portfolio-web",
     },
@@ -52,7 +69,7 @@ const workData = {
       id: 6,
       title: "Grocery List Generator",
       description:
-        "An application that sends you ingredients to shop for based on recipes you select for the week. Built with Python, and PyQt6.",
+        "Weekly grocery assistant that auto-creates shopping lists from recipe selections.",
       technologies: ["Python", "PyQt6"],
       link: "https://github.com/yashbhal/grocery-list-generator",
     },
@@ -60,8 +77,8 @@ const workData = {
       id: 7,
       title: "Movie Recommender",
       description:
-        "A project that randomly suggests a movie to watch from the IMDB Top 250 Movies List. Built using Python and the BeautifulSoup library.",
-      technologies: ["Pyton", "BeautifulSoup"],
+        "Lightweight picker that surfaces a random film from the IMDb Top 250 list.",
+      technologies: ["Python", "BeautifulSoup"],
       link: "https://github.com/yashbhal/movie-finder",
     },
   ],
@@ -69,8 +86,9 @@ const workData = {
     {
       id: 1,
       company: "ViTAL Lab at Georgia Tech & Emory University",
+      role: "Graduate Research Assistant",
       description:
-        "Building a sensor-driven mobile application with React Native Expo that leverages device sensors and hardware capabilities for extensive data collection across iOS and Android platforms.",
+        "Building a sensor-rich React Native app for longitudinal health studies across iOS and Android.",
       technologies: ["React Native", "Expo", "Git"],
       link: "https://kwonvitallab.github.io/",
       startDate: "August 2024",
@@ -79,8 +97,9 @@ const workData = {
     {
       id: 2,
       company: "Microchip Technology",
+      role: "Software Engineer I",
       description:
-        "Worked as part of the 16-bit Applications team, primarily developing new features, maintaining and improving code for the 16-bit Bootloader Library, and the CryptoAuthentication Library.",
+        "Shipped features and maintenance for the 16-bit Bootloader and CryptoAuthentication libraries.",
       technologies: ["TypeScript", "Java", "C", "React"],
       link: "https://www.microchip.com/",
       startDate: "July 2022",
@@ -89,8 +108,9 @@ const workData = {
     {
       id: 3,
       company: "KPIT",
+      role: "Software Engineering Intern",
       description:
-        "Worked in an Agile team to design and develop test scripts to automate the functional and stability testing of automotive infotainment systems.",
+        "Automated functional and stability tests for automotive infotainment systems in an Agile team.",
       technologies: ["Python"],
       link: "https://www.kpit.com",
       startDate: "May 2022",
@@ -99,8 +119,9 @@ const workData = {
     {
       id: 4,
       company: "Immersive Creation Studio",
+      role: "Full-Stack Developer",
       description:
-        "Building prototypical immersive XR platforms for learning environments.",
+        "Prototyped XR learning environments spanning web, 3D assets, and spatial interactions.",
       technologies: ["React", "TypeScript", "Blender", "Figma"],
       link: "https://xr.asu.edu",
       startDate: "May 2021",
@@ -109,8 +130,9 @@ const workData = {
     {
       id: 5,
       company: "Meteor Studio",
+      role: "AR Developer",
       description:
-        "Worked on the design and development of an augmented reality software using Unity Game Engine for iOS, Android, and Microsoft Hololens.",
+        "Designed and built AR learning experiences for iOS, Android, and HoloLens using Unity.",
       technologies: ["C#", "UnityEngine", "Firebase"],
       link: "https://meteor.ame.asu.edu/",
       startDate: "November 2020",

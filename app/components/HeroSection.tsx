@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-[90vh] flex items-center justify-center bg-base-100">
+    <section className="flex min-h-[80vh] items-center justify-center bg-base-100 md:min-h-[90vh]">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-14">
           {/* Text Content */}
           <div className="space-y-6">
             <div className="space-y-2">
@@ -21,13 +21,11 @@ export const HeroSection = () => {
               Software Developer & Graduate Student
             </h2>
 
-            <p className="text-lg text-base-content/80 max-w-xl">
-              <ul>
-                <li>● MS CS at Georgia Tech</li>
-                <li>● Over 2 years of software development experience</li>
-                <li>● Actively looking for internships</li>
-              </ul>
-            </p>
+            <ul className="max-w-xl list-disc list-inside space-y-1.5 text-lg text-base-content/80">
+              <li>MS CS at Georgia Tech</li>
+              <li>Over 2 years of software development experience</li>
+              <li>Actively looking for internships</li>
+            </ul>
 
             <div className="flex gap-4 pt-4">
               <a

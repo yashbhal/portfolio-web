@@ -2,14 +2,13 @@ import { getPostData } from "../posts";
 import BlogLayout from "../../components/BlogLayout";
 import { marked } from "marked";
 
-interface BlogPostProps {
-  params: {
-    slug: string;
-  };
-}
+type BlogPostPageProps = {
+  params: Promise<{ slug: string }>;
+};
 
-const BlogPostPage = async ({ params }: BlogPostProps) => {
-  const post = getPostData(params.slug);
+const BlogPostPage = async ({ params }: BlogPostPageProps) => {
+  const { slug } = await params;
+  const post = getPostData(slug);
 
   return (
     <BlogLayout>
