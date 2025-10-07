@@ -1,6 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "portfolioLight";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #fafaf9;
+  --color-base-200: #f5f5f4;
+  --color-base-300: #e7e5e4;
+  --color-base-content: #334155;
+
+  --color-primary: #334155;
+  --color-primary-content: #ffffff;
+
+  --color-secondary: #64748b;
+  --color-secondary-content: #f8fafc;
+
+  --color-accent: #0ea5e9;
+  --color-accent-content: #f8fafc;
+
+  --color-neutral: #1f2937;
+  --color-neutral-content: #f8fafc;
+
+  --color-info: #38bdf8;
+  --color-info-content: #0f172a;
+
+  --color-success: #22c55e;
+  --color-success-content: #052e16;
+
+  --color-warning: #facc15;
+  --color-warning-content: #422006;
+
+  --color-error: #ef4444;
+  --color-error-content: #450a0a;
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: var(--font-inter), system-ui;
+  --font-heading: var(--font-montserrat), system-ui;
+  --font-display: var(--font-space-grotesk), system-ui;
+}
 
 /* Modern Color System */
 :root {
@@ -26,7 +80,8 @@
 
 /* Base Styles */
 body {
-  @apply font-sans antialiased bg-base-100;
+  font-family: var(--font-sans);
+  @apply antialiased bg-base-100;
   color: rgb(var(--color-text-primary));
 }
 
@@ -37,7 +92,8 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-heading font-semibold tracking-tight;
+  font-family: var(--font-heading);
+  @apply font-semibold tracking-tight;
 }
 
 h1 {
@@ -80,18 +136,16 @@ h4 {
 }
 
 /* Animation Utilities */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@utility text-balance {
+  text-wrap: balance;
+}
 
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-in-out forwards;
-  }
+@utility animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
 
-  .animate-slide-up {
-    animation: slideUp 0.5s ease-out forwards;
-  }
+@utility animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
 }
 
 /* Animation Keyframes */
