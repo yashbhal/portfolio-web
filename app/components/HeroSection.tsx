@@ -21,13 +21,11 @@ export const HeroSection = () => {
               Software Developer & Graduate Student
             </h2>
 
-            <p className="text-lg text-base-content/80 max-w-xl">
-              <ul>
-                <li>● MS CS at Georgia Tech</li>
-                <li>● Over 2 years of software development experience</li>
-                <li>● Actively looking for internships</li>
-              </ul>
-            </p>
+            <ul className="text-lg text-base-content/80 max-w-xl space-y-2 list-disc list-inside">
+              <li>MS CS at Georgia Tech</li>
+              <li>Over 2 years of software development experience</li>
+              <li>Actively looking for internships</li>
+            </ul>
 
             <div className="flex gap-4 pt-4">
               <a

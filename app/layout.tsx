@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="portfolioLight"
       className={`${montserrat.variable} ${inter.variable}`}
       suppressHydrationWarning
     >
