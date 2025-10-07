@@ -1,11 +1,11 @@
 // components/AboutSection.tsx
 export const AboutSection = () => {
   return (
-    <section className="py-24 bg-base-100">
+    <section className="bg-base-100 py-20 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="mx-auto max-w-6xl">
           {/* Main Content */}
-          <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="grid items-start gap-12 md:grid-cols-2 md:gap-16">
             {/* Left Column - Main Text */}
             <div className="space-y-8">
               <div className="space-y-2">
@@ -16,12 +16,12 @@ export const AboutSection = () => {
               </div>
 
               <div className="space-y-4 text-base-content/80">
-                <p className="leading-relaxed">
+                <p className="text-base leading-relaxed">
                   I have 2 years of experience working full-time as a software
                   developer, and an undergraduate degree in Computer Science
                   from Arizona State University.
                 </p>
-                <p className="leading-relaxed">
+                <p className="text-base leading-relaxed">
                   I am currently pursuing MS in Computer Science at Georgia
                   Institute of Technology, and actively seeking internship
                   opportunities for Summer 2025.
@@ -29,9 +29,9 @@ export const AboutSection = () => {
               </div>
 
               {/* Quick Facts */}
-              <div className="pt-4 grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 gap-8 pt-4 sm:grid-cols-2">
                 <div>
-                  <h3 className="text-lg font-semibold mb-2 text-base-content">
+                  <h3 className="mb-2 text-lg font-semibold text-base-content">
                     Education
                   </h3>
                   <ul className="space-y-2 text-base-content/80">
@@ -40,7 +40,7 @@ export const AboutSection = () => {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2 text-base-content">
+                  <h3 className="mb-2 text-lg font-semibold text-base-content">
                     Beyond Tech
                   </h3>
                   <ul className="space-y-2 text-base-content/80">
@@ -53,7 +53,7 @@ export const AboutSection = () => {
             </div>
 
             {/* Right Column - Current Focus */}
-            <div className="bg-base-200 rounded-2xl p-8">
+            <div className="rounded-2xl border border-base-content/10 bg-base-200/60 p-6 backdrop-blur md:p-8">
               <div className="space-y-6">
                 <h3 className="text-2xl font-heading font-semibold text-base-content">
                   Current Focus
