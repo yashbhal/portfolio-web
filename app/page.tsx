@@ -26,11 +26,7 @@ export default function Home() {
       ) : (
         <div className="min-h-screen bg-base-100">
           <HeroSection />
-          <section id="about" className="bg-base-100 py-16 md:py-24">
-            <div className="container-responsive">
-              <AboutSection />
-            </div>
-          </section>
+          <AboutSection />
           <section id="work" className="bg-base-100 py-16 md:py-24">
             <div className="container-responsive">
               <div className="mx-auto max-w-6xl space-y-16">
