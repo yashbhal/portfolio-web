@@ -8,26 +8,21 @@ export const HeroSection = () => {
         <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-14">
           {/* Text Content */}
           <div className="space-y-6">
-            <div className="space-y-2">
-              <h2 className="text-lg md:text-xl font-medium text-base-content/80">
-                Hello, {`I'm`}
-              </h2>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-base-content">
-                Yash Bhalchandra
+            <div className="space-y-3">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight text-base-content">
+                Hi, {`I'm`} Yash.
               </h1>
+              <p className="text-base md:text-lg font-medium text-base-content/80">
+                <span className="block">Builder chasing curiosity-fueled problems.</span>
+                <span className="block">Always picking up whatever skills it takes to solve them.</span>
+              </p>
             </div>
 
-            <h2 className="text-xl md:text-2xl font-heading text-base-content">
-              Software Developer & Graduate Student
-            </h2>
+            <p className="max-w-xl text-base md:text-lg text-base-content/80">
+              Right now I'm building Petpin AI: the first wearable and AI video platform that turns pets into full-time content creators and lays the rails for the new digital pet economy.
+            </p>
 
-            <ul className="max-w-xl list-disc list-inside space-y-1.5 text-lg text-base-content/80">
-              <li>MS CS at Georgia Tech</li>
-              <li>Over 2 years of software development experience</li>
-              <li>Actively looking for internships</li>
-            </ul>
-
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
               <a
                 href="https://linkedin.com/in/yashbhal"
                 target="_blank"
