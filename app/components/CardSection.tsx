@@ -43,7 +43,7 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
         <h2 className="text-2xl md:text-3xl font-heading font-semibold">{title}</h2>
         <p className="max-w-xl text-sm md:text-base text-base-content/65">
           {isProjects
-            ? "Quick snapshots of products and experiments I’ve crafted recently."
+            ? "Quick snapshots of stuff I've made."
             : "A tidy view of teams, roles, and outcomes from the past few years."}
         </p>
       </header>
@@ -56,7 +56,7 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
             {projects.map((project) => (
               <article
                 key={project.id}
-                className="group relative flex min-w-[88%] max-w-sm snap-start flex-col gap-3.5 rounded-xl border border-base-content/10 bg-base-200/60 p-4 backdrop-blur transition hover:-translate-y-1 hover:border-base-content/20 hover:bg-base-200/70 sm:min-w-[320px] md:min-w-[300px] lg:min-w-[340px] md:p-5"
+                className="group relative flex min-w-[88%] max-w-md snap-start flex-col gap-4 rounded-xl border border-base-content/10 bg-base-200/60 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-base-content/20 hover:bg-base-200/70 sm:min-w-[340px] md:min-w-[340px] lg:min-w-[380px] md:p-6 min-h-[340px]"
               >
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-lg font-heading font-semibold text-base-content">
@@ -96,7 +96,7 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
             {experiences.map((experience) => (
               <article
                 key={experience.id}
-                className="group relative flex min-w-[88%] max-w-sm snap-start flex-col gap-3.5 rounded-xl border border-base-content/10 bg-base-200/60 p-4 backdrop-blur transition hover:-translate-y-1 hover:border-base-content/20 hover:bg-base-200/70 sm:min-w-[320px] md:min-w-[320px] lg:min-w-[360px] md:p-5"
+                className="group relative flex min-w-[88%] max-w-md snap-start flex-col gap-4 rounded-xl border border-base-content/10 bg-base-200/60 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-base-content/20 hover:bg-base-200/70 sm:min-w-[340px] md:min-w-[360px] lg:min-w-[400px] md:p-6 min-h-[360px]"
               >
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-lg font-heading font-semibold text-base-content">
