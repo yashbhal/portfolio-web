@@ -58,12 +58,12 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
                 key={project.id}
                 className="group relative flex min-w-[88%] max-w-md snap-start flex-col gap-4 rounded-xl border border-base-content/10 bg-base-200/60 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-base-content/20 hover:bg-base-200/70 sm:min-w-[340px] md:min-w-[340px] lg:min-w-[380px] md:p-6 min-h-[340px]"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-lg font-heading font-semibold text-base-content">
+                <div className="flex items-start justify-between gap-3 min-h-[64px]">
+                  <h3 className="text-lg font-heading font-semibold text-base-content line-clamp-2">
                     {project.title}
                   </h3>
                 </div>
-                <p className="text-[13px] leading-relaxed text-base-content/70">
+                <p className="text-[13px] leading-relaxed text-base-content/70 flex-1 min-h-[96px] line-clamp-4">
                   {project.description}
                 </p>
                 <a
@@ -98,20 +98,22 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
                 key={experience.id}
                 className="group relative flex min-w-[88%] max-w-md snap-start flex-col gap-4 rounded-xl border border-base-content/10 bg-base-200/60 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-base-content/20 hover:bg-base-200/70 sm:min-w-[340px] md:min-w-[360px] lg:min-w-[400px] md:p-6 min-h-[360px]"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-lg font-heading font-semibold text-base-content">
+                <div className="flex items-start justify-between gap-3 min-h-[64px]">
+                  <h3 className="text-lg font-heading font-semibold text-base-content line-clamp-2">
                     {experience.company}
                   </h3>
                   <span className="text-sm font-medium text-base-content/60 whitespace-nowrap">
                     {formatDateRange(experience.startDate, experience.endDate)}
                   </span>
                 </div>
-                {experience.role && (
-                  <p className="text-xs font-semibold uppercase tracking-wide text-primary/70">
-                    {experience.role}
-                  </p>
-                )}
-                <p className="text-[13px] leading-relaxed text-base-content/70">
+                <div className="min-h-[24px] flex items-center">
+                  {experience.role && (
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary/70 line-clamp-1">
+                      {experience.role}
+                    </p>
+                  )}
+                </div>
+                <p className="text-[13px] leading-relaxed text-base-content/70 flex-1 min-h-[112px] line-clamp-5">
                   {experience.description}
                 </p>
               </article>
