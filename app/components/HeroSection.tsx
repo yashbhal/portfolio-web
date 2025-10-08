@@ -4,7 +4,7 @@ import Image from "next/image";
 export const HeroSection = () => {
   return (
     <section className="flex min-h-[80vh] items-center justify-center bg-base-100 md:min-h-[90vh]">
-      <div className="container mx-auto px-4">
+      <div className="container-responsive">
         <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-14">
           {/* Text Content */}
           <div className="space-y-6">
@@ -12,10 +12,6 @@ export const HeroSection = () => {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight text-base-content">
                 Hi, {`I'm`} Yash.
               </h1>
-              <p className="text-base md:text-lg font-medium text-base-content/80">
-                <span className="block">Builder chasing curiosity-fueled problems.</span>
-                <span className="block">Always picking up whatever skills it takes to solve them.</span>
-              </p>
             </div>
 
             <p className="max-w-xl text-base md:text-lg text-base-content/80">

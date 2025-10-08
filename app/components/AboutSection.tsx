@@ -2,7 +2,7 @@
 export const AboutSection = () => {
   return (
     <section className="bg-base-100 py-20 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container-responsive">
         <div className="mx-auto max-w-6xl">
           {/* Main Content */}
           <div className="space-y-16">
