@@ -112,7 +112,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
     },
     {
       id: 2,
-      company: "The Residency Delta S1",
+      company: "Residency Delta",
       role: "Founder",
       description:
         "Built LifeOS: a drag-drop UI based productivity tool that allows you to control 1000+ integrations using natural language powered by a proprietary algorithm.",
@@ -123,7 +123,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
     },
     {
       id: 3,
-      company: "ViTAL Lab (Emory x GT)",
+      company: "The ViTAL Lab",
       role: "Graduate Research Assistant",
       description:
         "A sensor-driven React Native app for longitudinal health studies across iOS and Android.",
@@ -156,10 +156,10 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
     },
     {
       id: 6,
-      company: "Immersive Creation Studio",
+      company: "XR @ ASU",
       role: "Full-Stack Developer",
       description:
-        "Prototyped XR learning environments and worked on the studio's website.",
+        "Worked on the studio's website and prototyped XR learning environments for classes at ASU.",
       technologies: ["React", "TypeScript", "Blender", "Figma"],
       link: "https://xr.asu.edu",
       startDate: "May 2021",
