@@ -5,88 +5,108 @@ export const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
           {/* Main Content */}
-          <div className="grid items-start gap-12 md:grid-cols-2 md:gap-16">
-            {/* Left Column - Main Text */}
-            <div className="space-y-8">
+          <div className="space-y-16">
+            <div className="space-y-6">
               <div className="space-y-2">
-                <h4 className="text-base-content/80 font-medium">ABOUT ME</h4>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-base-content">
-                  I like building intuitive software that solves problems
+                <h4 className="text-base-content/70 text-sm font-semibold uppercase tracking-[0.3em]">
+                  ABOUT ME
+                </h4>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold leading-tight text-base-content">
+                  <span className="block">Builder chasing curiosity-fueled problems.</span>
+                  <span className="block">Always picking up whatever skills it takes to solve them.</span>
                 </h2>
               </div>
 
-              <div className="space-y-4 text-base-content/80">
+              <div className="space-y-4 text-base-content/80 max-w-3xl">
                 <p className="text-base leading-relaxed">
-                  I have 2 years of experience working full-time as a software
-                  developer, and an undergraduate degree in Computer Science
-                  from Arizona State University.
+                  I&apos;m pretty technology agnostic and chase the skills a problem demands, even if that means learning something totally outside my comfort zone. The throughline is simple: make things that spark excitement for me and the people who use them.
                 </p>
                 <p className="text-base leading-relaxed">
-                  I am currently pursuing MS in Computer Science at Georgia
-                  Institute of Technology, and actively seeking internship
-                  opportunities for Summer 2025.
+                  Picking a single niche has never stuck. I see that as a feature, not a bug because there is too much remarkable stuff out there to limit yourself. Do what pulls at your curiosity, be kind, create momentum for others, and put in the reps to become the person you want to be.
                 </p>
-              </div>
-
-              {/* Quick Facts */}
-              <div className="grid grid-cols-1 gap-8 pt-4 sm:grid-cols-2">
-                <div>
-                  <h3 className="mb-2 text-lg font-semibold text-base-content">
-                    Education
-                  </h3>
-                  <ul className="space-y-2 text-base-content/80">
-                    <li>MS Computer Science @ Georgia Tech</li>
-                    <li>BS Computer Science @ ASU</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="mb-2 text-lg font-semibold text-base-content">
-                    Beyond Tech
-                  </h3>
-                  <ul className="space-y-2 text-base-content/80">
-                    <li>Soccer</li>
-                    <li>Digital Art</li>
-                    <li>Books</li>
-                  </ul>
-                </div>
+                <p className="text-base leading-relaxed">
+                  Life feels too short to ignore what lights you up and too long to skip the marathon of improvement. Be a good person, build happiness around you, and put in the work to create the life you want.
+                </p>
               </div>
             </div>
 
-            {/* Right Column - Current Focus */}
-            <div className="rounded-2xl border border-base-content/10 bg-base-200/60 p-6 backdrop-blur md:p-8">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-heading font-semibold text-base-content">
-                  Current Focus
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+              <section className="rounded-2xl border border-base-content/10 bg-base-200/60 p-6 backdrop-blur md:p-8">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-base-content/70">
+                  Currently
                 </h3>
-
-                {/* Focus Areas */}
-                <div className="space-y-6">
-                  <div className="space-y-2">
-                    <h4 className="font-medium">Project in Development</h4>
-                    <p className="text-base-content/80">
-                      QuestLife - A Privacy Focused Journalling App that brings
-                      you a new perspective on your life.
+                <ul className="mt-5 space-y-5 text-base-content/85">
+                  <li className="border-l-2 border-base-content/20 pl-4">
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
+                      Building
+                    </span>
+                    <p className="mt-2 text-sm leading-relaxed md:text-base">
+                      Petpin, the first wearable and AI video platform that turns pets into full-time content creators and lays the rails for the new digital pet economy.
                     </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h4 className="font-medium">Academic</h4>
-                    <p className="text-base-content/80">
-                      Exploring advanced concepts in machine learning, deep
-                      learning and computer vision at Georgia Tech.
+                  </li>
+                  <li className="border-l-2 border-base-content/20 pl-4">
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
+                      Reading
+                    </span>
+                    <p className="mt-2 text-sm leading-relaxed md:text-base">
+                      Chip War: The Fight for the World’s Most Critical Technology by Chris Miller.
                     </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h4 className="font-medium">Career</h4>
-                    <p className="text-base-content/80">
-                      Seeking internship opportunities where I can contribute to
-                      innovative projects while expanding my technical
-                      expertise.
+                  </li>
+                  <li className="border-l-2 border-base-content/20 pl-4">
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
+                      Watching
+                    </span>
+                    <p className="mt-2 text-sm leading-relaxed md:text-base">
+                      A heavy rotation of electrical and embedded engineering videos.
                     </p>
-                  </div>
+                  </li>
+                  <li className="border-l-2 border-base-content/20 pl-4">
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
+                      Fixing
+                    </span>
+                    <p className="mt-2 text-sm leading-relaxed md:text-base">
+                      Sleep and routine. Dialing in the fundamentals so I can show up sharper.
+                    </p>
+                  </li>
+                </ul>
+              </section>
+
+              <aside className="space-y-6">
+                <div className="rounded-2xl border border-base-content/10 bg-base-200/40 p-6">
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-base-content/70">
+                    Education
+                  </h3>
+                  <dl className="mt-4 space-y-3 text-sm text-base-content/80">
+                    <div className="flex flex-col gap-1">
+                      <dt className="font-medium text-base-content">Georgia Institute of Technology</dt>
+                      <dd className="text-base-content/70">MS Computer Science</dd>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <dt className="font-medium text-base-content">Arizona State University</dt>
+                      <dd className="text-base-content/70">BS Computer Science</dd>
+                    </div>
+                  </dl>
                 </div>
-              </div>
+                <div className="rounded-2xl border border-base-content/10 bg-base-200/40 p-6">
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-base-content/70">
+                    Beyond Tech
+                  </h3>
+                  <dl className="mt-4 space-y-3 text-sm text-base-content/80">
+                    <div>
+                      <dt className="font-medium text-base-content">Sport</dt>
+                      <dd className="text-base-content/70">Love watching and playing sports — especially soccer and Formula 1.</dd>
+                    </div>
+                    <div>
+                      <dt className="font-medium text-base-content">Art</dt>
+                      <dd className="text-base-content/70">I&apos;ve been learning and making digital art in my free time. It&apos;s calming and a skill I&apos;ve always admired.</dd>
+                    </div>
+                    <div>
+                      <dt className="font-medium text-base-content">Music</dt>
+                      <dd className="text-base-content/70">I used to play drums; now I&apos;m learning the ukulele after falling in love with its sound.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </aside>
             </div>
           </div>
         </div>
