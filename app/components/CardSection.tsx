@@ -140,11 +140,11 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
                 key={experience.id}
                 className="group relative flex min-w-[88%] max-w-md snap-start flex-col gap-4 rounded-xl border border-base-content/10 bg-base-200/60 p-5 backdrop-blur transition hover:-translate-y-1 hover:border-base-content/20 hover:bg-base-200/70 sm:min-w-[340px] md:min-w-[360px] lg:min-w-[400px] md:p-6 min-h-[360px]"
               >
-                <div className="flex items-baseline justify-between gap-3 min-h-[64px]">
+                <div className="flex min-h-[64px] flex-col gap-2 md:flex-row md:items-baseline md:justify-between md:gap-3">
                   <h3 className="text-lg font-heading font-semibold text-base-content line-clamp-2">
                     {experience.company}
                   </h3>
-                  <span className="text-sm font-medium text-base-content/60 whitespace-nowrap">
+                  <span className="text-xs font-medium text-base-content/60 md:text-sm md:whitespace-nowrap">
                     {formatDateRange(experience.startDate, experience.endDate)}
                   </span>
                 </div>

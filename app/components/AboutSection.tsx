@@ -1,7 +1,7 @@
 // components/AboutSection.tsx
 export const AboutSection = () => {
   return (
-    <section className="bg-base-100 py-20 md:py-24">
+    <section id="about" className="bg-base-100 py-20 md:py-24">
       <div className="container-responsive">
         <div className="mx-auto max-w-6xl">
           {/* Main Content */}
