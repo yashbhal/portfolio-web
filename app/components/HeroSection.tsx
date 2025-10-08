@@ -15,7 +15,7 @@ export const HeroSection = () => {
             </div>
 
             <p className="max-w-xl text-base md:text-lg text-base-content/80">
-              Right now I'm building Petpin AI: the first wearable and AI video platform that turns pets into full-time content creators and lays the rails for the new digital pet economy.
+              Right now I&apos;m building Petpin AI: the first wearable and AI video platform that turns pets into full-time content creators and lays the rails for the new digital pet economy.
             </p>
 
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">
