@@ -66,16 +66,6 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
                 <p className="text-[13px] leading-relaxed text-base-content/70">
                   {project.description}
                 </p>
-                <ul className="flex flex-wrap gap-1.5">
-                  {project.technologies.map((tech) => (
-                    <li
-                      key={`${project.id}-${tech}`}
-                      className="rounded-full border border-base-content/10 px-2.5 py-1 text-[11px] font-medium text-base-content/60"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
                 <a
                   href={project.link}
                   target="_blank"
@@ -124,16 +114,6 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
                 <p className="text-[13px] leading-relaxed text-base-content/70">
                   {experience.description}
                 </p>
-                <ul className="mt-auto flex flex-wrap gap-1.5">
-                  {experience.technologies.map((tech) => (
-                    <li
-                      key={`${experience.id}-${tech}`}
-                      className="rounded-full border border-base-content/10 px-2.5 py-1 text-[11px] font-medium text-base-content/60"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>
