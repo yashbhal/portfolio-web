@@ -1,181 +1,77 @@
 ## Project Overview
-A modern, minimalist portfolio website built with Next.js, TypeScript, and TailwindCSS. The website serves as a professional showcase for a software developer, featuring work experience, projects, and a blog.
+Modern portfolio site built with Next.js, TypeScript, and Tailwind CSS. It highlights professional experience, projects, and writing in a single responsive layout.
 
-## Technical Stack
-- **Framework**: Next.js 14 (App Router)
+## Tech Stack
+- **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
-- **Styling**: TailwindCSS with DaisyUI
+- **Styling**: Tailwind CSS 4 with DaisyUI 5
 - **Fonts**: Google Fonts (Inter, Montserrat)
 - **Deployment**: Vercel
 
-## Project Structure
+## Getting Started
 
-### Core Configuration Files
+### Prerequisites
+- Node.js 18 or later
+- npm 9 or later
+
+### Setup
+```bash
+npm install
+npm run dev
 ```
-├── tailwind.config.ts      # TailwindCSS and DaisyUI configuration
-├── next.config.js          # Next.js configuration
-├── tsconfig.json           # TypeScript configuration
-└── package.json           # Project dependencies and scripts
+Development server starts on http://localhost:3000.
+
+### Scripts
+- `npm run dev` start local development
+- `npm run lint` run ESLint (Next.js CLI)
+- `npm run build` create production build (Next.js 15). The build may emit a DaisyUI `@property` warning that is safe to ignore.
+
+## Key Files
+```
+├── next.config.mjs       # Next.js configuration
+├── tailwind.config.ts    # Tailwind CSS and DaisyUI configuration
+├── postcss.config.mjs    # PostCSS setup
+├── tsconfig.json         # TypeScript configuration
+└── package.json          # Scripts and dependencies
 ```
 
-### App Directory Structure Overview
+## App Directory Highlights
 ```
 app/
-├── layout.tsx              # Root layout with common elements
-├── page.tsx               # Home page
-├── globals.css            # Global styles
-├── Work/                  # Work experience and projects page
+├── layout.tsx            # Root layout with navbar, footer, global providers
+├── page.tsx              # Landing page entry
+├── globals.css           # Tailwind CSS and DaisyUI theme setup
+├── components/           # Reusable UI sections
+├── Work/                 # Standalone Work page and data
 │   ├── page.tsx
-│   └── workData.ts        # Work and project data
-├── Blog/                  # Blog section
-│   └── page.tsx
-└── components/            # Reusable components
+│   └── workData.ts
+└── Blog/                 # Blog index and dynamic routes
+    ├── page.tsx
+    └── [slug]/           # Markdown-driven blog detail pages
 ```
 
-## Key Components
+## Core Components
+- **Navbar.tsx** sticky navigation with mobile menu and shared horizontal padding via `container-responsive`
+- **HeroSection.tsx** landing hero with intro copy, calls to action, and portrait
+- **AboutSection.tsx** story, education, and interests with panel layout
+- **CardSection.tsx** horizontal carousels for projects and experience with scroll controls
+- **BlogLayout.tsx** shared wrapper for blog posts
+- **Footer.tsx** contact links and copyright
 
-### Layout Components
-1. **Navbar.tsx**
-   - Responsive navigation bar
-   - Mobile-friendly hamburger menu
-   - Smooth scroll transitions
-   - Fixed positioning with backdrop blur
+## Design Notes
+- Consistent horizontal spacing handled by the `.container-responsive` utility (`app/globals.css`)
+- DaisyUI theme defined in `globals.css` for color tokens and radii
+- Responsive grids and flex layouts tuned for mobile, tablet, and desktop breakpoints
+- Next.js `<Image>` used for automatic asset optimization
+- Loading screen and scroll indicator add UX polish during navigation
 
-2. **Footer.tsx**
-   - Social media links
-   - Contact information
-   - Consistent styling with the theme
+## Data Flow
+- Work and project listings sourced from `app/Work/workData.ts`
+- Blog posts reside in `app/BlogPosts/*.md` and are consumed by the Blog routes
+- Components receive typed props to encourage reuse and clarity
 
-### Page Components
-1. **HeroSection.tsx**
-   - Main landing section
-   - Personal introduction
-   - Call-to-action buttons
-   - Professional image
-   - Responsive grid layout
-
-2. **AboutSection.tsx**
-   - Professional background
-   - Education details
-   - Current focus areas
-   - Personal interests
-   - Two-column layout for better information organization
-
-3. **WorkCard.tsx** & **CardSection.tsx**
-   - Reusable card components for work experiences and projects
-   - Consistent styling
-   - Technology tags
-   - Date display for work experiences
-   - Learn More buttons
-   - Glass effect styling
-
-## Design Decisions
-
-### Color Scheme
-- **Light Theme**
-  - Clean, minimal color palette
-  - Off-white background for reduced eye strain
-  - Subtle grays for depth
-  - High contrast for readability
-
-### Typography
-- **Montserrat**: Headings
-  - Professional appearance
-  - Good readability at larger sizes
-- **Inter**: Body text
-  - Modern, clean sans-serif
-  - Excellent readability at all sizes
-
-### Layout Philosophy
-1. **Spacing**
-   - Consistent padding and margins
-   - Proper white space for readability
-   - Responsive spacing using Tailwind's spacing scale
-
-2. **Responsiveness**
-   - Mobile-first approach
-   - Breakpoints:
-     - sm: 640px
-     - md: 768px
-     - lg: 1024px
-   - Flexible grid systems
-
-3. **Visual Hierarchy**
-   - Clear heading structure
-   - Consistent text sizes
-   - Strategic use of font weights
-   - Subtle opacity variations for depth
-
-## Component Architecture
-
-### Card System
-```typescript
-interface CardProps {
-  title?: string;
-  company?: string;
-  description: string;
-  technologies?: string[];
-  link: string;
-  isProject: boolean;
-  startDate?: string;
-  endDate?: string;
-}
-```
-- Flexible card system for both projects and work experience
-- Optional fields for different use cases
-- Consistent styling with hover effects
-- Technology tag system
-
-### Section Layout
-- Container system for consistent width
-- Responsive padding
-- Maximum width constraints
-- Centered content
-
-## Performance Considerations
-
-1. **Image Optimization**
-   - Next.js Image component for automatic optimization
-   - Proper sizing and priority loading
-   - Responsive image sizes
-
-2. **Loading States**
-   - Loading screen for initial page load
-   - Smooth transitions between states
-
-3. **Code Organization**
-   - Component-based architecture
-   - Clear separation of concerns
-   - Reusable components and interfaces
-
-## UI/UX Decisions
-
-1. **Navigation**
-   - Simple, clear navigation
-   - Mobile-friendly menu
-   - Smooth scrolling
-   - Fixed navbar for easy access
-
-2. **Content Presentation**
-   - Clear visual hierarchy
-   - Scannable content
-   - Important information highlighted
-   - Consistent styling
-
-3. **Interactive Elements**
-   - Subtle hover effects
-   - Clear call-to-action buttons
-   - Accessible links and buttons
-
-## Future Plans and Potential Feature Additions
-1. **Blog Integration**
-   - Potential for external blog integration
-
-2. **Dark Mode**
-   - Future implementation planned
-   - Color system ready for theme extension
-
-3. **Additional Sections**
-   - A sleek contact form
-   - A resume page
-   - A page that displays photos/experiences from other hobbies
+## Roadmap Ideas
+- Add dark theme variant using DaisyUI theme switches
+- Expand blog tooling for MDX and richer metadata
+- Introduce contact form with backend integration
+- Automate deploy previews via Vercel Git integration
