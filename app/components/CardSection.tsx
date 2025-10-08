@@ -1,4 +1,7 @@
+"use client";
+
 // components/CardSection.tsx
+import { useRef } from "react";
 import { Project, Experience } from "../Work/workData";
 
 interface SectionProps {
@@ -32,6 +35,21 @@ const formatDateRange = (startDate: string, endDate?: string) => {
 };
 
 const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
+  const projectsScrollRef = useRef<HTMLDivElement | null>(null);
+  const experiencesScrollRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollByAmount = (
+    container: HTMLDivElement | null,
+    direction: "left" | "right"
+  ) => {
+    if (!container) return;
+
+    const amount = container.offsetWidth * 0.85;
+    container.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
   const isProjects = Array.isArray(projects);
 
   return (
@@ -49,10 +67,13 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
       </header>
 
       {projects && (
-        <div className="relative">
+        <div className="relative pb-12">
           <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-12 bg-gradient-to-r from-base-100 via-base-100/80 to-transparent md:block" />
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-12 bg-gradient-to-l from-base-100 via-base-100/80 to-transparent md:block" />
-          <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 scroll-smooth md:mx-0 md:px-0">
+          <div
+            ref={projectsScrollRef}
+            className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 scroll-smooth md:mx-0 md:px-0"
+          >
             {projects.map((project) => (
               <article
                 key={project.id}
@@ -85,14 +106,35 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
               </article>
             ))}
           </div>
+          <div className="absolute bottom-4 right-4 flex gap-2 md:hidden">
+            <button
+              type="button"
+              onClick={() => scrollByAmount(projectsScrollRef.current, "left")}
+              className="btn btn-outline btn-sm"
+              aria-label="Scroll projects left"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollByAmount(projectsScrollRef.current, "right")}
+              className="btn btn-outline btn-sm"
+              aria-label="Scroll projects right"
+            >
+              ›
+            </button>
+          </div>
         </div>
       )}
 
       {experiences && (
-        <div className="relative">
+        <div className="relative pb-12">
           <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-12 bg-gradient-to-r from-base-100 via-base-100/80 to-transparent md:block" />
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-12 bg-gradient-to-l from-base-100 via-base-100/80 to-transparent md:block" />
-          <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 scroll-smooth md:mx-0 md:px-0">
+          <div
+            ref={experiencesScrollRef}
+            className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 scroll-smooth md:mx-0 md:px-0"
+          >
             {experiences.map((experience) => (
               <article
                 key={experience.id}
@@ -118,6 +160,24 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
                 </p>
               </article>
             ))}
+          </div>
+          <div className="absolute bottom-4 right-4 flex gap-2 md:hidden">
+            <button
+              type="button"
+              onClick={() => scrollByAmount(experiencesScrollRef.current, "left")}
+              className="btn btn-outline btn-sm"
+              aria-label="Scroll experiences left"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollByAmount(experiencesScrollRef.current, "right")}
+              className="btn btn-outline btn-sm"
+              aria-label="Scroll experiences right"
+            >
+              ›
+            </button>
           </div>
         </div>
       )}
