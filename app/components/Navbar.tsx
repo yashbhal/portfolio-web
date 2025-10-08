@@ -36,7 +36,7 @@ const Navbar = () => {
           }
         `}
       >
-        <div className="h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-full container-responsive">
           <div className="flex items-center justify-between h-full">
             {/* Logo/Brand */}
             <Link
@@ -105,7 +105,7 @@ const Navbar = () => {
           ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}
         `}
       >
-        <div className="max-w-7xl mx-auto px-4 py-3">
+        <div className="container-responsive py-3">
           <div className="flex flex-col space-y-1">
             {navItems.map((item) => (
               <Link
