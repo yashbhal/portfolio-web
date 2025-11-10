@@ -56,8 +56,8 @@ export const AboutSection = () => {
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
                       Petpin, the first wearable lets see you life from your
-                      pet's perspective and lays the rails for the new digital
-                      pet economy.
+                      pet&apos;s perspective and lays the rails for the new
+                      digital pet economy.
                     </p>
                   </li>
                   <li className="border-l-2 border-base-content/20 pl-4">
