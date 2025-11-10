@@ -96,7 +96,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
         "Lightweight picker that surfaces a random film from the IMDb Top 250 list.",
       technologies: ["Python", "BeautifulSoup"],
       link: "https://github.com/yashbhal/movie-finder",
-  }
+    },
   ],
   experiences: [
     {
@@ -104,7 +104,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       company: "Petpin",
       role: "Everything Technical",
       description:
-        "An AI wearable for pets that captures POV footage and automatically edits clips for social media, turning your pet into a standout creator.",
+        "The first wearable that lets you see life from your pet's perspective and lays the rails for the new digital pet economy.",
       technologies: [],
       link: "https://petpin.ai",
       startDate: "Coming Soon!",

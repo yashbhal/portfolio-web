@@ -12,20 +12,34 @@ export const AboutSection = () => {
                   ABOUT ME
                 </h4>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold leading-tight text-base-content">
-                  <span className="block">Builder chasing curiosity-fueled problems.</span>
-                  <span className="block">Always picking up whatever skills it takes to solve them.</span>
+                  <span className="block">
+                    Builder chasing curiosity-fueled problems.
+                  </span>
+                  <span className="block">
+                    Always picking up whatever skills it takes to solve them.
+                  </span>
                 </h2>
               </div>
 
               <div className="space-y-4 text-base-content/80 max-w-3xl">
                 <p className="text-base leading-relaxed">
-                  I&apos;m pretty technology agnostic and chase the skills a problem demands, even if that means learning something totally outside my comfort zone. The throughline is simple: make things that spark excitement for me and the people who use them.
+                  I&apos;m pretty technology agnostic and chase the skills a
+                  problem demands, even if that means learning something totally
+                  outside my comfort zone. I like to build things that spark
+                  excitement for me and the people who use them.
                 </p>
                 <p className="text-base leading-relaxed">
-                  Picking a single niche has never stuck. I see that as a feature, not a bug because there is too much remarkable stuff out there to limit yourself. Do what pulls at your curiosity, be kind, create momentum for others, and put in the reps to become the person you want to be.
+                  Picking a single niche has never stuck. I see that as a
+                  feature, not a bug because there is too much remarkable stuff
+                  out there to limit yourself. Do what pulls at your curiosity,
+                  be kind, create momentum for others, and put in the reps to
+                  become the person you want to be.
                 </p>
                 <p className="text-base leading-relaxed">
-                  Life feels too short to ignore what lights you up and too long to skip the marathon of improvement. Be a good person, build happiness around you, and put in the work to create the life you want.
+                  Life feels too short to ignore what lights you up and too long
+                  to skip the marathon of improvement. Be a good person, build
+                  happiness around you, and put in the work to create the life
+                  you want.
                 </p>
               </div>
             </div>
@@ -41,7 +55,9 @@ export const AboutSection = () => {
                       Building
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
-                      Petpin, the first wearable and AI video platform that turns pets into full-time content creators and lays the rails for the new digital pet economy.
+                      Petpin, the first wearable lets see you life from your
+                      pet's perspective and lays the rails for the new digital
+                      pet economy.
                     </p>
                   </li>
                   <li className="border-l-2 border-base-content/20 pl-4">
@@ -49,7 +65,8 @@ export const AboutSection = () => {
                       Reading
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
-                      Chip War: The Fight for the World’s Most Critical Technology by Chris Miller.
+                      Chip War: The Fight for the World’s Most Critical
+                      Technology by Chris Miller.
                     </p>
                   </li>
                   <li className="border-l-2 border-base-content/20 pl-4">
@@ -57,15 +74,8 @@ export const AboutSection = () => {
                       Watching
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
-                      A heavy rotation of electrical and embedded engineering videos.
-                    </p>
-                  </li>
-                  <li className="border-l-2 border-base-content/20 pl-4">
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
-                      Fixing
-                    </span>
-                    <p className="mt-2 text-sm leading-relaxed md:text-base">
-                      Sleep and routine. Dialing in the fundamentals so I can show up sharper.
+                      A heavy rotation of electrical and embedded engineering
+                      videos.
                     </p>
                   </li>
                 </ul>
@@ -78,12 +88,20 @@ export const AboutSection = () => {
                   </h3>
                   <dl className="mt-4 space-y-3 text-sm text-base-content/80">
                     <div className="flex flex-col gap-1">
-                      <dt className="font-medium text-base-content">Georgia Institute of Technology</dt>
-                      <dd className="text-base-content/70">MS Computer Science</dd>
+                      <dt className="font-medium text-base-content">
+                        Georgia Institute of Technology
+                      </dt>
+                      <dd className="text-base-content/70">
+                        MS Computer Science
+                      </dd>
                     </div>
                     <div className="flex flex-col gap-1">
-                      <dt className="font-medium text-base-content">Arizona State University</dt>
-                      <dd className="text-base-content/70">BS Computer Science</dd>
+                      <dt className="font-medium text-base-content">
+                        Arizona State University
+                      </dt>
+                      <dd className="text-base-content/70">
+                        BS Computer Science
+                      </dd>
                     </div>
                   </dl>
                 </div>
@@ -94,15 +112,25 @@ export const AboutSection = () => {
                   <dl className="mt-4 space-y-3 text-sm text-base-content/80">
                     <div>
                       <dt className="font-medium text-base-content">Sport</dt>
-                      <dd className="text-base-content/70">Love watching and playing sports — especially soccer and Formula 1.</dd>
+                      <dd className="text-base-content/70">
+                        Love watching and playing sports, especially soccer and
+                        Formula 1.
+                      </dd>
                     </div>
                     <div>
                       <dt className="font-medium text-base-content">Art</dt>
-                      <dd className="text-base-content/70">I&apos;ve been learning and making digital art in my free time. It&apos;s calming and a skill I&apos;ve always admired.</dd>
+                      <dd className="text-base-content/70">
+                        I&apos;ve been learning and making digital art in my
+                        free time. It&apos;s calming and a skill I&apos;ve
+                        always admired.
+                      </dd>
                     </div>
                     <div>
                       <dt className="font-medium text-base-content">Music</dt>
-                      <dd className="text-base-content/70">I used to play drums; now I&apos;m learning the ukulele after falling in love with its sound.</dd>
+                      <dd className="text-base-content/70">
+                        I used to play drums; now I&apos;m learning the ukulele
+                        after falling in love with its sound.
+                      </dd>
                     </div>
                   </dl>
                 </div>
