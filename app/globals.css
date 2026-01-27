@@ -133,13 +133,13 @@ body {
   color: rgb(var(--color-text-primary));
 }
 
-/* SVG Icon Theme Adaptation */
-svg {
+/* SVG Icon Theme Adaptation - Only for footer icons */
+footer svg {
   fill: currentColor !important;
 }
 
-/* Override specific SVG paths that have hardcoded colors */
-svg path[fill] {
+/* Override specific SVG paths in footer */
+footer svg path[fill] {
   fill: currentColor !important;
 }
 h1,
