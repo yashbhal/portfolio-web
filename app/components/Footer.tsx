@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,12 +7,12 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      icon: "/linkedin-icon.svg",
+      icon: <FaLinkedin className="w-5 h-5" />,
       url: "https://www.linkedin.com/in/yashbhal",
     },
     {
       name: "GitHub",
-      icon: "/github-icon.svg",
+      icon: <FaGithub className="w-5 h-5" />,
       url: "https://github.com/yashbhal",
     },
   ];
@@ -25,14 +25,7 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
             {/* Copyright */}
             <div className="flex items-center gap-2">
-              <div className="relative w-4 h-4 opacity-80">
-                <Image
-                  src="/copyright-icon.svg"
-                  alt="Copyright"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              <span className="text-base-content/80 text-sm">©</span>
               <p className="text-sm sm:text-base text-base-content/80">
                 <span className="font-heading">
                   {currentYear} Yash Bhalchandra
@@ -50,17 +43,11 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-2 rounded-lg hover:bg-base-200/50
-                         transition-all duration-300"
+                         transition-all duration-300 flex items-center"
                 aria-label={link.name}
               >
-                <div className="relative w-5 h-5">
-                  <Image
-                    src={link.icon}
-                    alt={link.name}
-                    fill
-                    className="object-contain opacity-80 transition-transform
-                             duration-300 group-hover:scale-110"
-                  />
+                <div className="opacity-80 transition-transform duration-300 group-hover:scale-110 text-base-content/80">
+                  {link.icon}
                 </div>
               </a>
             ))}

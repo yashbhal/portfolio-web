@@ -133,7 +133,15 @@ body {
   color: rgb(var(--color-text-primary));
 }
 
-/* Typography System */
+/* SVG Icon Theme Adaptation */
+svg {
+  fill: currentColor !important;
+}
+
+/* Override specific SVG paths that have hardcoded colors */
+svg path[fill] {
+  fill: currentColor !important;
+}
 h1,
 h2,
 h3,
