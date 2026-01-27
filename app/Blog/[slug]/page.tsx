@@ -12,7 +12,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
 
   return (
     <BlogLayout>
-      <article className="card glass bg-base-300 shadow-xl animate-fade-in mt-20">
+      <article className="card border border-base-content/10 bg-base-200/60 shadow-md animate-fade-in mt-20 hover:shadow-lg">
         {/* Post Header */}
         <div className="p-8 md:p-12 border-b border-base-content/10">
           <h1 className="font-heading text-3xl md:text-4xl font-bold mb-6">

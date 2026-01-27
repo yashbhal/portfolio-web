@@ -15,7 +15,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   slug,
 }) => {
   return (
-    <div className="card glass shadow-lg bg-base-300 transition-standard">
+    <div className="card border border-base-content/10 bg-base-200/60 shadow-md transition-standard hover:shadow-lg hover:border-base-content/20">
       <div className="card-body p-6">
         {/* Title with hover effect */}
         <h2
