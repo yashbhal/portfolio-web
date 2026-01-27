@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./globals.css";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 // Font configurations
 const montserrat = Montserrat({
@@ -26,16 +27,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="portfolioLight"
       className={`${montserrat.variable} ${inter.variable}`}
       suppressHydrationWarning
     >
       <body className="flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow pt-16 md:pt-20">{children}</main>
-        <Footer />
-        <SpeedInsights />
-        <Analytics />
+        <ThemeProvider>
+          <Navbar />
+          <main className="flex-grow pt-16 md:pt-20">{children}</main>
+          <Footer />
+          <SpeedInsights />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
