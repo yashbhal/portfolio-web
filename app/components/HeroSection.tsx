@@ -15,9 +15,7 @@ export const HeroSection = () => {
             </div>
 
             <p className="max-w-xl text-base md:text-lg text-base-content/80">
-              I&apos;m building Petpin: the first wearable that lets you see
-              life from your pet&apos;s perspective and lays the rails for the
-              new digital pet economy.
+I learn whatever I need to fast to build what gets me excited. Now, I'm hunting for my next opportunity towards creating something generational.
             </p>
 
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">

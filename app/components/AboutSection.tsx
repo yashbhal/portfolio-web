@@ -47,7 +47,7 @@ export const AboutSection = () => {
             <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
               <section className="rounded-2xl border border-base-content/10 bg-base-200/60 p-6 backdrop-blur md:p-8">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-base-content/70">
-                  Currently
+                  Recently
                 </h3>
                 <ul className="mt-5 space-y-5 text-base-content/85">
                   <li className="border-l-2 border-base-content/20 pl-4">
