@@ -107,8 +107,8 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
         "The first wearable that lets you see life from your pet's perspective and lays the rails for the new digital pet economy.",
       technologies: [],
       link: "https://petpin.ai",
-      startDate: "Coming Soon!",
-      endDate: "https://petpin.ai",
+      startDate: "August 2025",
+      endDate: "January 2026",
     },
     {
       id: 2,
