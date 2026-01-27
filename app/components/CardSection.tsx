@@ -55,15 +55,7 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
   return (
     <section className="w-full space-y-6 md:space-y-8">
       <header className="space-y-2 text-base-content">
-        <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-primary/60">
-          {isProjects ? "Selected work" : "Career timeline"}
-        </span>
         <h2 className="text-2xl md:text-3xl font-heading font-semibold">{title}</h2>
-        <p className="max-w-xl text-sm md:text-base text-base-content/65">
-          {isProjects
-            ? "Quick snapshots of stuff I've made."
-            : "A tidy view of teams, roles, and outcomes from the past few years."}
-        </p>
       </header>
 
       {projects && (

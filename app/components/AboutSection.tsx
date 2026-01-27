@@ -26,7 +26,7 @@ export const AboutSection = () => {
                   outside my comfort zone.
                 </p>
                 <p className="text-base leading-relaxed">
-I see being niche-less as a feature, not a bug. There's too much remarkable stuff out there to limit yourself. Follow your curiosity, be kind, create momentum for others, and put in the reps to become who you want to be. Life's too short to ignore what lights you up, but long enough for the marathon of improvement.
+I see being niche-less as a feature, not a bug. There&apos;s too much remarkable stuff out there to limit yourself. Follow your curiosity, be kind, create momentum for others, and put in the reps to become who you want to be. Life&apos;s too short to ignore what lights you up, but long enough for the marathon of improvement.
                 </p>
               </div>
             </div>
