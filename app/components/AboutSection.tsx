@@ -13,10 +13,8 @@ export const AboutSection = () => {
                 </h4>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold leading-tight text-base-content">
                   <span className="block">
-                    Builder chasing curiosity-fueled problems.
-                  </span>
-                  <span className="block">
-                    Always picking up whatever skills it takes to solve them.
+                    I like to build things that spark excitement for me and the
+                    people who use them.
                   </span>
                 </h2>
               </div>
@@ -25,21 +23,10 @@ export const AboutSection = () => {
                 <p className="text-base leading-relaxed">
                   I&apos;m pretty technology agnostic and chase the skills a
                   problem demands, even if that means learning something totally
-                  outside my comfort zone. I like to build things that spark
-                  excitement for me and the people who use them.
+                  outside my comfort zone.
                 </p>
                 <p className="text-base leading-relaxed">
-                  Picking a single niche has never stuck. I see that as a
-                  feature, not a bug because there is too much remarkable stuff
-                  out there to limit yourself. Do what pulls at your curiosity,
-                  be kind, create momentum for others, and put in the reps to
-                  become the person you want to be.
-                </p>
-                <p className="text-base leading-relaxed">
-                  Life feels too short to ignore what lights you up and too long
-                  to skip the marathon of improvement. Be a good person, build
-                  happiness around you, and put in the work to create the life
-                  you want.
+I see being niche-less as a feature, not a bug. There's too much remarkable stuff out there to limit yourself. Follow your curiosity, be kind, create momentum for others, and put in the reps to become who you want to be. Life's too short to ignore what lights you up, but long enough for the marathon of improvement.
                 </p>
               </div>
             </div>
