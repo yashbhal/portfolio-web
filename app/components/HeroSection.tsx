@@ -15,7 +15,7 @@ export const HeroSection = () => {
             </div>
 
             <p className="max-w-xl text-base md:text-lg text-base-content/80">
-I learn whatever is needed to build what gets me excited. Now, I&apos;m hunting for my next opportunity towards creating something generational.
+I build things that excite me, learning whatever is required along the way. Looking for the next problem worth obsessing over.
             </p>
 
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">

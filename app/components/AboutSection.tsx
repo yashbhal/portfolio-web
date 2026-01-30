@@ -21,12 +21,12 @@ export const AboutSection = () => {
 
               <div className="space-y-4 text-base-content/80 max-w-3xl">
                 <p className="text-base leading-relaxed">
-                  I&apos;m pretty technology agnostic and chase the skills a
+                  I&apos;m technology agnostic and chase the skills a
                   problem demands, even if that means learning something totally
                   outside my comfort zone.
                 </p>
                 <p className="text-base leading-relaxed">
-I see being niche-less as a feature, not a bug. There&apos;s too much remarkable stuff out there to limit yourself. Follow your curiosity, be kind, create momentum for others, and put in the reps to become who you want to be. Life&apos;s too short to ignore what lights you up, but long enough for the marathon of improvement.
+I see being niche-less as a feature, not a bug. There is too much remarkable work out there to limit yourself. I try to follow my curiosity, be kind, create momentum for others, and put in the reps to become who I want to be. Life’s too short to ignore what lights you up, but long enough to commit to the long game.
                 </p>
               </div>
             </div>
