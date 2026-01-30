@@ -15,14 +15,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>('portfolioLight');
 
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
+    // Check for saved theme preference, default to light mode
     const savedTheme = localStorage.getItem('theme') as Theme | null;
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (savedTheme) {
       setTheme(savedTheme);
-    } else if (systemPrefersDark) {
-      setTheme('portfolioDark');
+    } else {
+      // Default to light mode regardless of system preference
+      setTheme('portfolioLight');
     }
   }, []);
 
