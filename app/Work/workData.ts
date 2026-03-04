@@ -21,6 +21,14 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
   projects: [
     {
       id: 1,
+      title: "StoryToTest",
+      description:
+        "VS Code extension and GitHub automation that converts closed issues into test PRs. Scans TypeScript codebases, matches entities to interfaces/classes, generates validated tests, and opens labeled PRs with status checks.",
+      technologies: ["TypeScript", "VS Code Extension", "GitHub Actions"],
+      link: "https://github.com/yashbhal/storytotest",
+    },
+    {
+      id: 2,
       title: "LifeOS",
       description:
         "Built LifeOS: a drag-drop UI based productivity tool that allows you to control 1000+ integrations using natural language powered by a proprietary algorithm.",
@@ -28,7 +36,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       link: "https://thelifeos.io",
     },
     {
-      id: 2,
+      id: 3,
       title: "Stardew Sage",
       description:
         "Open-source AI companion for Stardew Valley fans powered by Gemini 1.5 Flash.",
@@ -36,7 +44,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       link: "https://stardewsage.com",
     },
     {
-      id: 3,
+      id: 4,
       title: "Creator Platform",
       description:
         "A platform that allows you to use natural language to query your videos, edit them, and stitch them together for posting on social media.",
@@ -44,7 +52,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       link: "https://github.com/yashbhal/thecreatormarket",
     },
     {
-      id: 4,
+      id: 5,
       title: "Open Vocab Predictions for Indoor Scenes",
       description:
         "67.8% accuracy indoor scene understanding pipeline integrating Semantic SAM and SigLIP.",
@@ -58,7 +66,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       link: "https://loggs.github.io/cs7641-project-proposal/",
     },
     {
-      id: 5,
+      id: 6,
       title: "Haptic Stroke Rehabilitation Games",
       description:
         "Gesture-based Unity games for vibrotactile stroke rehab testing with Mediapipe tracking.",
@@ -66,7 +74,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       link: "https://github.com/yashbhal/",
     },
     {
-      id: 6,
+      id: 7,
       title: "Privacy Focused AI Journal Application",
       description:
         "Secure journaling platform that transforms entries into narratives using LangChain and Llama.",
@@ -74,7 +82,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       link: "https://github.com/yashbhal/",
     },
     {
-      id: 7,
+      id: 8,
       title: "Portfolio Website",
       description:
         "Personal site for projects, writing, and career notes built with the modern web stack.",
@@ -82,7 +90,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       link: "https://github.com/yashbhal/portfolio-web",
     },
     {
-      id: 8,
+      id: 9,
       title: "Grocery List Generator",
       description:
         "Weekly grocery assistant that auto-creates shopping lists from recipe selections.",
@@ -90,7 +98,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       link: "https://github.com/yashbhal/grocery-list-generator",
     },
     {
-      id: 9,
+      id: 10,
       title: "Movie Recommender",
       description:
         "Lightweight picker that surfaces a random film from the IMDb Top 250 list.",
