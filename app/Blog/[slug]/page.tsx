@@ -1,9 +1,15 @@
-import { getPostData } from "../posts";
+import { getPostData, getSortedPostsData } from "../posts";
 import BlogLayout from "../../components/BlogLayout";
 import { marked } from "marked";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
+};
+
+export const dynamicParams = false;
+
+export const generateStaticParams = () => {
+  return getSortedPostsData().map((post) => ({ slug: post.slug }));
 };
 
 const BlogPostPage = async ({ params }: BlogPostPageProps) => {
