@@ -50,8 +50,6 @@ const Section: React.FC<SectionProps> = ({ title, projects, experiences }) => {
       behavior: "smooth",
     });
   };
-  const isProjects = Array.isArray(projects);
-
   return (
     <section className="w-full space-y-6 md:space-y-8">
       <header className="space-y-2 text-base-content">

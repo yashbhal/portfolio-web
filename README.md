@@ -2,7 +2,7 @@
 Modern portfolio site built with Next.js, TypeScript, and Tailwind CSS. It highlights professional experience, projects, and writing in a single responsive layout.
 
 ## Tech Stack
-- **Framework**: Next.js 15.5.11 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS 4 with DaisyUI 5
 - **Fonts**: Google Fonts (Inter, Montserrat)
@@ -12,8 +12,8 @@ Modern portfolio site built with Next.js, TypeScript, and Tailwind CSS. It highl
 ## Getting Started
 
 ### Prerequisites
-- Node.js 18 or later
-- npm 9 or later
+- Node.js 24 (see `.nvmrc`)
+- npm 10 or later
 
 ### Setup
 ```bash
@@ -24,8 +24,9 @@ Development server starts on http://localhost:3000.
 
 ### Scripts
 - `npm run dev` start local development
-- `npm run lint` run ESLint (Next.js CLI)
-- `npm run build` create production build (Next.js 15). The build may emit a DaisyUI `@property` warning that is safe to ignore.
+- `npm run lint` run ESLint (flat config)
+- `npm test` run unit tests (Vitest)
+- `npm run build` create production build. The build may emit a DaisyUI `@property` warning that is safe to ignore.
 
 ## Key Files
 ```
