@@ -2,7 +2,6 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  technologies: string[];
   link: string;
 }
 
@@ -11,8 +10,6 @@ export interface Experience {
   company: string;
   role?: string;
   description: string;
-  technologies: string[];
-  link: string;
   startDate: string;
   endDate?: string;
 }
@@ -24,7 +21,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "StoryToTest",
       description:
         "VS Code extension and GitHub automation that converts closed issues into test PRs. Scans TypeScript codebases, matches entities to interfaces/classes, generates validated tests, and opens labeled PRs with status checks.",
-      technologies: ["TypeScript", "VS Code Extension", "GitHub Actions"],
       link: "https://github.com/yashbhal/storytotest",
     },
     {
@@ -32,7 +28,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "LifeOS",
       description:
         "Built LifeOS: a drag-drop UI based productivity tool that allows you to control 1000+ integrations using natural language powered by a proprietary algorithm.",
-      technologies: ["Next.js", "TypeScript", "OpenAI API"],
       link: "https://thelifeos.io",
     },
     {
@@ -40,7 +35,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "Stardew Sage",
       description:
         "Open-source AI companion for Stardew Valley fans powered by Gemini 1.5 Flash.",
-      technologies: ["TypeScript", "Next.js", "Vercel", "Google Gemini", "LLM"],
       link: "https://stardewsage.com",
     },
     {
@@ -48,7 +42,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "Creator Platform",
       description:
         "A platform that allows you to use natural language to query your videos, edit them, and stitch them together for posting on social media.",
-      technologies: ["Next.js", "TypeScript", "ffmpeg", "Twelve Labs"],
       link: "https://github.com/yashbhal/thecreatormarket",
     },
     {
@@ -56,13 +49,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "Open Vocab Predictions for Indoor Scenes",
       description:
         "67.8% accuracy indoor scene understanding pipeline integrating Semantic SAM and SigLIP.",
-      technologies: [
-        "Python",
-        "PyTorch",
-        "Jupyter Notebook",
-        "Machine Learning",
-        "Computer Vision",
-      ],
       link: "https://loggs.github.io/cs7641-project-proposal/",
     },
     {
@@ -70,7 +56,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "Haptic Stroke Rehabilitation Games",
       description:
         "Gesture-based Unity games for vibrotactile stroke rehab testing with Mediapipe tracking.",
-      technologies: ["Python", "C#", "Figma", "Unity Engine", "Mediapipe"],
       link: "https://github.com/yashbhal/",
     },
     {
@@ -78,7 +63,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "Privacy Focused AI Journal Application",
       description:
         "Secure journaling platform that transforms entries into narratives using LangChain and Llama.",
-      technologies: ["TypeScript", "PostgreSQL", "Next.js", "LLM", "LangChain"],
       link: "https://github.com/yashbhal/",
     },
     {
@@ -86,7 +70,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "Portfolio Website",
       description:
         "Personal site for projects, writing, and career notes built with the modern web stack.",
-      technologies: ["Next.js", "TypeScript", "TailwindCSS", "DaisyUI"],
       link: "https://github.com/yashbhal/portfolio-web",
     },
     {
@@ -94,7 +77,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "Grocery List Generator",
       description:
         "Weekly grocery assistant that auto-creates shopping lists from recipe selections.",
-      technologies: ["Python", "PyQt6"],
       link: "https://github.com/yashbhal/grocery-list-generator",
     },
     {
@@ -102,7 +84,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       title: "Movie Recommender",
       description:
         "Lightweight picker that surfaces a random film from the IMDb Top 250 list.",
-      technologies: ["Python", "BeautifulSoup"],
       link: "https://github.com/yashbhal/movie-finder",
     },
   ],
@@ -113,8 +94,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       role: "Everything Technical",
       description:
         "The first wearable that lets you see life from your pet's perspective and lays the rails for the new digital pet economy.",
-      technologies: [],
-      link: "https://petpin.ai",
       startDate: "August 2025",
       endDate: "January 2026",
     },
@@ -124,8 +103,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       role: "Founder",
       description:
         "Built LifeOS: a drag-drop UI based productivity tool that allows you to control 1000+ integrations using natural language powered by a proprietary algorithm.",
-      technologies: ["TypeScript", "Next.js", "OpenAI API"],
-      link: "https://thelifeos.io",
       startDate: "July 2025",
       endDate: "August 2025",
     },
@@ -135,8 +112,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       role: "Graduate Research Assistant",
       description:
         "A sensor-driven React Native app for longitudinal health studies across iOS and Android.",
-      technologies: ["React Native", "Expo", "Git"],
-      link: "https://kwonvitallab.github.io/",
       startDate: "August 2024",
       endDate: "May 2025",
     },
@@ -146,8 +121,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       role: "Software Engineer",
       description:
         "Shipped features and maintenance for the 16-bit Bootloader and CryptoAuthentication libraries.",
-      technologies: ["TypeScript", "Java", "C", "React"],
-      link: "https://www.microchip.com/",
       startDate: "July 2022",
       endDate: "April 2024",
     },
@@ -157,8 +130,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       role: "Software Engineering Intern",
       description:
         "Automated functional and stability tests for automotive infotainment systems.",
-      technologies: ["Python"],
-      link: "https://www.kpit.com",
       startDate: "May 2022",
       endDate: "July 2022",
     },
@@ -168,8 +139,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       role: "Full-Stack Developer",
       description:
         "Worked on the studio's website and prototyped XR learning environments for classes at ASU.",
-      technologies: ["React", "TypeScript", "Blender", "Figma"],
-      link: "https://xr.asu.edu",
       startDate: "May 2021",
       endDate: "August 2021",
     },
@@ -179,8 +148,6 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       role: "AR Developer",
       description:
         "Built ScavengetHunt - gamified campus tours for Arizona State University campuses",
-      technologies: ["C#", "UnityEngine", "Firebase"],
-      link: "https://meteor.ame.asu.edu/",
       startDate: "November 2020",
       endDate: "May 2021",
     },

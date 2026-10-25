@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
@@ -18,6 +19,23 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://yashbhalchandra.com"),
+  title: {
+    default: "Yash Bhalchandra",
+    template: "%s | Yash Bhalchandra",
+  },
+  description:
+    "Portfolio of Yash Bhalchandra — projects, writing, and professional experience.",
+  openGraph: {
+    title: "Yash Bhalchandra",
+    description:
+      "Portfolio of Yash Bhalchandra — projects, writing, and professional experience.",
+    siteName: "Yash Bhalchandra",
+    type: "website",
+  },
+};
 
 export default function RootLayout({
   children,
