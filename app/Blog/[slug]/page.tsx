@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getPostData, getSortedPostsData } from "../posts";
 import BlogLayout from "../../components/BlogLayout";
 import { marked } from "marked";
@@ -10,6 +11,14 @@ export const dynamicParams = false;
 
 export const generateStaticParams = () => {
   return getSortedPostsData().map((post) => ({ slug: post.slug }));
+};
+
+export const generateMetadata = async ({
+  params,
+}: BlogPostPageProps): Promise<Metadata> => {
+  const { slug } = await params;
+  const post = getPostData(slug);
+  return { title: post.title, description: post.description };
 };
 
 const BlogPostPage = async ({ params }: BlogPostPageProps) => {

@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import BlogLayout from "../components/BlogLayout";
 import BlogCard from "../components/BlogCard";
 import { getSortedPostsData } from "./posts";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Writing by Yash Bhalchandra.",
+};
 
 const BlogPage = async () => {
   const allPostsData = getSortedPostsData();

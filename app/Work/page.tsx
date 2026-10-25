@@ -1,6 +1,12 @@
 // app/Work/page.tsx
+import type { Metadata } from "next";
 import Section from "../components/CardSection";
 import workData from "./workData";
+
+export const metadata: Metadata = {
+  title: "Work",
+  description: "Professional experience and projects by Yash Bhalchandra.",
+};
 
 const Work = () => {
   const { experiences, projects } = workData;
