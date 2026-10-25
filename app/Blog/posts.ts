@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { notFound } from "next/navigation";
 
 const postsDirectory = path.join(process.cwd(), "app/BlogPosts");
 
@@ -34,8 +35,16 @@ export function getSortedPostsData(): Omit<PostData, "content">[] {
 }
 
 export function getPostData(slug: string): PostData {
+  if (!/^[a-zA-Z0-9_-]+$/.test(slug)) {
+    notFound();
+  }
   const fullPath = path.join(postsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  let fileContents: string;
+  try {
+    fileContents = fs.readFileSync(fullPath, "utf8");
+  } catch {
+    notFound();
+  }
   const matterResult = matter(fileContents);
 
   return {
