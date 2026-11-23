@@ -1,5 +1,5 @@
 // components/HeroSection.tsx
-import Image from "next/image";
+import { StoryCard } from "./StoryCard";
 
 export const HeroSection = () => {
   return (
@@ -36,17 +36,10 @@ I build things that excite me, learning whatever is required along the way. Look
             </div>
           </div>
 
-          {/* Image */}
+          {/* Story Card */}
           <div className="flex justify-center md:justify-end">
-            <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <Image
-                src="/about_photo.png"
-                alt="Yash Bhalchandra"
-                width={320}
-                height={320}
-                className="rounded-2xl object-cover shadow-2xl"
-                priority
-              />
+            <div className="w-72 md:w-80">
+              <StoryCard />
             </div>
           </div>
         </div>
