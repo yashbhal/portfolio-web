@@ -39,10 +39,11 @@ I see being niche-less as a feature, not a bug. There is too much remarkable wor
                 <ul className="mt-5 space-y-5 text-base-content/85">
                   <li className="border-l-2 border-base-content/20 pl-4">
                     <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
-                      Building
+                      Learning
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
-Forward Deployed @ Ancera. Deploying software, hardware, diagnostics, and data. Whatever it takes to make food production safer, faster, and more profitable.
+                      How food makes it to our table, the beauty and challenges of data engineering, and
+                      building systems that scale.
                     </p>
                   </li>
                   <li className="border-l-2 border-base-content/20 pl-4">
