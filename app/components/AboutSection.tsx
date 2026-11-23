@@ -7,26 +7,33 @@ export const AboutSection = () => {
           {/* Main Content */}
           <div className="space-y-16">
             <div className="space-y-6">
-              <div className="space-y-2">
-                <h4 className="text-base-content/70 text-sm font-semibold uppercase tracking-[0.3em]">
-                  ABOUT ME
-                </h4>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold leading-tight text-base-content">
-                  <span className="block">
-                    I like to work on hard problems and build things that spark excitement for me and the
-                    people who use them.
-                  </span>
-                </h2>
-              </div>
+              <h4 className="text-base-content/70 text-sm font-semibold uppercase tracking-[0.3em]">
+                ABOUT ME
+              </h4>
 
               <div className="space-y-4 text-base-content/80 max-w-3xl">
                 <p className="text-base leading-relaxed">
-                  I&apos;m pretty tool agnostic and chase the skills a
-                  problem demands, even if that means learning something totally
-                  outside my comfort zone.
+                  I love learning something new about the world, whether it
+                  comes from working in a new industry or just conversations
+                  with friends and strangers.
                 </p>
                 <p className="text-base leading-relaxed">
-I see being niche-less as a feature, not a bug. There is too much remarkable work out there to limit yourself. I try to follow my curiosity, be kind, create momentum for others, and put in the reps to become who I want to be. Life’s too short to ignore what lights you up, but long enough to commit to the long game.
+                  I think anyone can become intermediate at anything with the
+                  right amount of effort. Somehow, maybe because of that, every
+                  job I&apos;ve taken started with me not knowing how to do it,
+                  and that&apos;s always been my favorite part.
+                </p>
+                <p className="text-base leading-relaxed">
+                  That&apos;s made me pretty tool agnostic. I chase whatever
+                  skills a problem demands, even when it means learning
+                  something totally outside my comfort zone.
+                </p>
+                <p className="text-base leading-relaxed">
+                  Controversially, I see being niche-less as a feature, not a
+                  bug. There&apos;s too much remarkable work out there to pick
+                  one lane. I try to follow my curiosity and create momentum for
+                  the people around me. Life&apos;s too short to ignore what
+                  lights you up.
                 </p>
               </div>
             </div>
@@ -60,7 +67,7 @@ I see being niche-less as a feature, not a bug. There is too much remarkable wor
                       Side Questing
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
-                     3D printing. I can bring software I imagine to life, now it's time to bring physical objects to life.
+                      3D printing. I&apos;ve brought the software I imagine to life, now it&apos;s time to do the same for physical objects.
                     </p>
                   </li>
                 </ul>

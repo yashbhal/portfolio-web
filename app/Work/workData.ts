@@ -128,7 +128,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       company: "Microchip Technology",
       role: "Software Engineer",
       description:
-        "Shipped features and maintenance for the 16-bit Bootloader and CryptoAuthentication libraries.",
+        "Shipped features and maintenance updates for the 16-bit Bootloader and CryptoAuthentication libraries.",
       startDate: "July 2022",
       endDate: "April 2024",
     },
@@ -155,7 +155,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       company: "Meteor Studio",
       role: "AR Developer",
       description:
-        "Built ScavengetHunt - gamified campus tours for Arizona State University campuses",
+        "Built ScavengerHunt: gamified campus tours for Arizona State University campuses.",
       startDate: "November 2020",
       endDate: "May 2021",
     },
