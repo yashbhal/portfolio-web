@@ -21,12 +21,15 @@ describe("ThemeProvider", () => {
     render(
       <ThemeProvider>
         <ThemeControl />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
 
     expect(screen.getByRole("button")).toHaveTextContent("portfolioDark");
     await waitFor(() =>
-      expect(document.documentElement).toHaveAttribute("data-theme", "portfolioDark")
+      expect(document.documentElement).toHaveAttribute(
+        "data-theme",
+        "portfolioDark",
+      ),
     );
   });
 
@@ -36,7 +39,7 @@ describe("ThemeProvider", () => {
     render(
       <ThemeProvider>
         <ThemeControl />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
 
     await user.click(screen.getByRole("button"));
