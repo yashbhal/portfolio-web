@@ -1,26 +1,32 @@
-// app/Work/page.tsx
+// app/work/page.tsx
 import type { Metadata } from "next";
-import Section from "../components/CardSection";
+import { WorkSections } from "../components/WorkSections";
 import workData from "./workData";
 
 export const metadata: Metadata = {
   title: "Work",
   description: "Professional experience and projects by Yash Bhalchandra.",
+  alternates: {
+    canonical: "/work",
+  },
+  openGraph: {
+    title: "Work | Yash Bhalchandra",
+    description: "Professional experience and projects by Yash Bhalchandra.",
+    url: "/work",
+    type: "website",
+  },
 };
 
-const Work = () => {
+const WorkPage = () => {
   const { experiences, projects } = workData;
 
   return (
-    <div className="min-h-screen bg-base-100">
+    <div className="bg-base-100 min-h-screen">
       <div className="container-responsive py-14 md:py-20">
-        <div className="mx-auto flex max-w-6xl flex-col gap-12">
-          <Section title="Professional Experience" experiences={experiences} />
-          <Section title="Projects" projects={projects} />
-        </div>
+        <WorkSections experiences={experiences} projects={projects} />
       </div>
     </div>
   );
 };
 
-export default Work;
+export default WorkPage;
