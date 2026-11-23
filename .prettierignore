@@ -1,0 +1,12 @@
+.next
+node_modules
+coverage
+public/animations
+content
+daisyllm.txt
+package-lock.json
+tsconfig.tsbuildinfo
+next-env.d.ts
+README.md
+AGENTS.md
+LICENSE
