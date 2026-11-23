@@ -315,3 +315,19 @@ h4 {
     opacity: 0;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bob,
+  .animate-blink,
+  .animate-pop,
+  .animate-spin-slow,
+  .animate-ping-slow,
+  .animate-fade-in {
+    animation: none;
+  }
+
+  /* draw animates dashoffset to 0; without it strokes would stay hidden */
+  .animate-draw {
+    stroke-dashoffset: 0;
+  }
+}

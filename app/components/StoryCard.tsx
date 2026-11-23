@@ -4,11 +4,24 @@
 /* Animated hero card: a self-advancing story carousel. Each slide is its own animated SVG scene; the progress bars drive
    rotation and support tap / swipe / keyboard navigation. */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
+import type { PointerEvent, ReactNode } from "react";
 
 const SLIDE_MS = 3200;
 
-type StoryScene = { caption: string; render: () => React.ReactNode };
+type StoryScene = { caption: string; render: () => ReactNode };
+
+/* Honors prefers-reduced-motion; false on the server. */
+const usePrefersReducedMotion = () =>
+  useSyncExternalStore(
+    (onChange) => {
+      const q = window.matchMedia("(prefers-reduced-motion: reduce)");
+      q.addEventListener("change", onChange);
+      return () => q.removeEventListener("change", onChange);
+    },
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => false,
+  );
 
 /* ============================ Shared SVG helpers ============================ */
 
@@ -30,53 +43,56 @@ const Eye = ({ cx, cy, r = 2.8 }: { cx: number; cy: number; r?: number }) => (
   />
 );
 
-const Caption = ({ children }: { children: React.ReactNode }) => (
+const Caption = ({ children }: { children: ReactNode }) => (
   <p className="font-mono text-[11px] tracking-wider text-base-content/60">
     {children}
   </p>
 );
 
 /* Scene canvas: 240x160 blueprint with a faint dot grid */
-const BlueprintShell = ({ children }: { children: React.ReactNode }) => (
-  <svg
-    viewBox="0 0 240 160"
-    className="h-auto w-full"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.9"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden
-  >
-    <defs>
-      <pattern
-        id="story-grid"
-        width="16"
-        height="16"
-        patternUnits="userSpaceOnUse"
-      >
-        <circle
-          cx="8"
-          cy="8"
-          r="0.75"
-          fill="currentColor"
-          stroke="none"
-          className="text-base-content/15"
-        />
-      </pattern>
-    </defs>
-    <rect
-      x="6"
-      y="6"
-      width="228"
-      height="148"
-      rx="12"
-      fill="url(#story-grid)"
-      stroke="none"
-    />
-    {children}
-  </svg>
-);
+const BlueprintShell = ({ children }: { children: ReactNode }) => {
+  const gridId = useId();
+  return (
+    <svg
+      viewBox="0 0 240 160"
+      className="h-auto w-full"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.9"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <defs>
+        <pattern
+          id={gridId}
+          width="16"
+          height="16"
+          patternUnits="userSpaceOnUse"
+        >
+          <circle
+            cx="8"
+            cy="8"
+            r="0.75"
+            fill="currentColor"
+            stroke="none"
+            className="text-base-content/15"
+          />
+        </pattern>
+      </defs>
+      <rect
+        x="6"
+        y="6"
+        width="228"
+        height="148"
+        rx="12"
+        fill={`url(#${gridId})`}
+        stroke="none"
+      />
+      {children}
+    </svg>
+  );
+};
 
 /* Positioned critter with a gentle bob (rendered inside a BlueprintShell) */
 const Critter = ({
@@ -90,7 +106,7 @@ const Critter = ({
   y: number;
   size: number;
   bobDelay?: number;
-  children: React.ReactNode;
+  children: ReactNode;
 }) => (
   <svg
     x={x}
@@ -774,25 +790,27 @@ const Outfit = ({ stage }: { stage: number }) => {
 };
 
 const WhateverScene = () => {
+  const reduced = usePrefersReducedMotion();
   const [stage, setStage] = useState(0);
+  const effectiveStage = reduced ? OUTFITS.length : stage;
 
   useEffect(() => {
-    if (stage >= OUTFITS.length) return;
+    if (reduced || stage >= OUTFITS.length) return;
     const t = setTimeout(() => setStage((s) => s + 1), 420);
     return () => clearTimeout(t);
-  }, [stage]);
+  }, [stage, reduced]);
 
   return (
     <BlueprintShell>
       <ellipse cx="120" cy="132" rx="40" ry="4.5" fill="currentColor" stroke="none" className="text-base-content/10" />
       <g transform="translate(120 132) scale(1.3) translate(-120 -129)">
-        <g key={stage} className="animate-pop">
-          <Outfit stage={stage} />
+        <g key={effectiveStage} className="animate-pop">
+          <Outfit stage={effectiveStage} />
         </g>
       </g>
-      {stage < OUTFITS.length && (
+      {effectiveStage < OUTFITS.length && (
         <text
-          key={`label-${stage}`}
+          key={`label-${effectiveStage}`}
           x="120"
           y="148"
           textAnchor="middle"
@@ -801,7 +819,7 @@ const WhateverScene = () => {
           stroke="none"
           className="animate-pop font-mono uppercase tracking-widest text-base-content/55"
         >
-          {OUTFITS[stage]}
+          {OUTFITS[effectiveStage]}
         </text>
       )}
     </BlueprintShell>
@@ -825,15 +843,16 @@ const StoryCarousel = ({ scenes }: { scenes: StoryScene[] }) => {
   const [hovered, setHovered] = useState(false);
   const [held, setHeld] = useState(false);
   const press = useRef<{ x: number; t: number } | null>(null);
-  const paused = hovered || held;
+  const reduced = usePrefersReducedMotion();
+  const paused = hovered || held || reduced;
   const go = (d: number) => setIdx((i) => (i + d + count) % count);
   const current = scenes[idx];
 
-  const onPointerDown = (e: React.PointerEvent) => {
+  const onPointerDown = (e: PointerEvent) => {
     press.current = { x: e.clientX, t: Date.now() };
     setHeld(true);
   };
-  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+  const onPointerUp = (e: PointerEvent<HTMLDivElement>) => {
     setHeld(false);
     if (!press.current) return;
     const dx = e.clientX - press.current.x;
@@ -875,6 +894,9 @@ const StoryCarousel = ({ scenes }: { scenes: StoryScene[] }) => {
       >
         <div
           key={idx}
+          role="group"
+          aria-roledescription="slide"
+          aria-label={`${idx + 1} of ${count}: ${current.caption}`}
           className="pointer-events-none absolute inset-0 flex animate-fade-in flex-col items-center justify-center gap-4"
         >
           {current.render()}
@@ -886,7 +908,7 @@ const StoryCarousel = ({ scenes }: { scenes: StoryScene[] }) => {
           <button
             key={caption}
             type="button"
-            aria-label={caption}
+            aria-label={`Slide ${i + 1}: ${caption}`}
             aria-current={i === idx}
             onClick={() => setIdx(i)}
             className="group flex-1 py-2"
