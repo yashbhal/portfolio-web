@@ -620,7 +620,7 @@ const ProductScene = () => (
     ))}
 
     {[54, 86, 118].map((y, i) => (
-      <g key={y}>
+      <g key={y} transform={`translate(50 ${y})`}>
         <animateTransform
           attributeName="transform"
           type="translate"
