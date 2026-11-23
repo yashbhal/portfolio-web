@@ -1,4 +1,5 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { siteConfig } from "../lib/site";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -6,28 +7,28 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      icon: <FaLinkedin className="w-5 h-5" />,
-      url: "https://www.linkedin.com/in/yashbhal",
+      icon: <FaLinkedin className="h-5 w-5" />,
+      url: siteConfig.social.linkedin,
     },
     {
       name: "GitHub",
-      icon: <FaGithub className="w-5 h-5" />,
-      url: "https://github.com/yashbhal",
+      icon: <FaGithub className="h-5 w-5" />,
+      url: siteConfig.social.github,
     },
   ];
 
   return (
-    <footer className="bg-base-200/50 backdrop-blur-sm border-t border-base-200/10">
+    <footer className="bg-base-200/50 border-base-200/10 border-t backdrop-blur-sm">
       <div className="container-responsive py-6 md:py-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           {/* Copyright and Links */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-8">
             {/* Copyright */}
             <div className="flex items-center gap-2">
               <span className="text-base-content/80 text-sm">©</span>
-              <p className="text-sm sm:text-base text-base-content/80">
+              <p className="text-base-content/80 text-sm sm:text-base">
                 <span className="font-heading">
-                  {currentYear} Yash Bhalchandra
+                  {currentYear} {siteConfig.name}
                 </span>
               </p>
             </div>
@@ -41,11 +42,10 @@ const Footer = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-2 rounded-lg hover:bg-base-200/50
-                         transition-all duration-300 flex items-center"
+                className="group hover:bg-base-200/50 flex items-center rounded-lg p-2 transition-all duration-300"
                 aria-label={link.name}
               >
-                <div className="opacity-80 transition-transform duration-300 group-hover:scale-110 text-base-content/80">
+                <div className="text-base-content/80 opacity-80 transition-transform duration-300 group-hover:scale-110">
                   {link.icon}
                 </div>
               </a>

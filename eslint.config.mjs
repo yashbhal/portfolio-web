@@ -12,6 +12,7 @@ const config = [
       "dist/**",
       "node_modules/**",
       "public/**",
+      "coverage/**",
       "next-env.d.ts",
     ],
   },

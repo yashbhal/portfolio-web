@@ -7,48 +7,54 @@ export const AboutSection = () => {
           {/* Main Content */}
           <div className="space-y-16">
             <div className="space-y-6">
-              <div className="space-y-2">
-                <h4 className="text-base-content/70 text-sm font-semibold uppercase tracking-[0.3em]">
-                  ABOUT ME
-                </h4>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold leading-tight text-base-content">
-                  <span className="block">
-                    I like to build things that spark excitement for me and the
-                    people who use them.
-                  </span>
-                </h2>
-              </div>
+              <h4 className="text-base-content/70 text-sm font-semibold tracking-[0.3em] uppercase">
+                ABOUT ME
+              </h4>
 
-              <div className="space-y-4 text-base-content/80 max-w-3xl">
+              <div className="text-base-content/80 max-w-3xl space-y-4">
                 <p className="text-base leading-relaxed">
-                  I&apos;m technology agnostic and chase the skills a
-                  problem demands, even if that means learning something totally
-                  outside my comfort zone.
+                  I love learning something new about the world, whether it
+                  comes from working in a new industry or just conversations
+                  with friends and strangers.
                 </p>
                 <p className="text-base leading-relaxed">
-I see being niche-less as a feature, not a bug. There is too much remarkable work out there to limit yourself. I try to follow my curiosity, be kind, create momentum for others, and put in the reps to become who I want to be. Life’s too short to ignore what lights you up, but long enough to commit to the long game.
+                  I think anyone can become intermediate at anything with the
+                  right amount of effort. Somehow, maybe because of that, every
+                  job I&apos;ve taken started with me not knowing how to do it,
+                  and that&apos;s always been my favorite part.
+                </p>
+                <p className="text-base leading-relaxed">
+                  That&apos;s made me pretty tool agnostic. I chase whatever
+                  skills a problem demands, even when it means learning
+                  something totally outside my comfort zone.
+                </p>
+                <p className="text-base leading-relaxed">
+                  Controversially, I see being niche-less as a feature, not a
+                  bug. There&apos;s too much remarkable work out there to pick
+                  one lane. I try to follow my curiosity and create momentum for
+                  the people around me. Life&apos;s too short to ignore what
+                  lights you up.
                 </p>
               </div>
             </div>
 
             <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-              <section className="rounded-2xl border border-base-content/10 bg-base-200/60 p-6 backdrop-blur md:p-8">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-base-content/70">
+              <section className="border-base-content/10 bg-base-200/60 rounded-2xl border p-6 backdrop-blur md:p-8">
+                <h3 className="text-base-content/70 text-sm font-semibold tracking-[0.2em] uppercase">
                   Recently
                 </h3>
-                <ul className="mt-5 space-y-5 text-base-content/85">
-                  <li className="border-l-2 border-base-content/20 pl-4">
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
-                      Building
+                <ul className="text-base-content/85 mt-5 space-y-5">
+                  <li className="border-base-content/20 border-l-2 pl-4">
+                    <span className="text-primary/70 text-xs font-semibold tracking-[0.2em] uppercase">
+                      Learning
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
-                      Petpin, the first wearable lets see you life from your
-                      pet&apos;s perspective and lays the rails for the new
-                      digital pet economy.
+                      How food makes it to our table, the beauty and challenges
+                      of data engineering, and building systems that scale.
                     </p>
                   </li>
-                  <li className="border-l-2 border-base-content/20 pl-4">
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
+                  <li className="border-base-content/20 border-l-2 pl-4">
+                    <span className="text-primary/70 text-xs font-semibold tracking-[0.2em] uppercase">
                       Reading
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
@@ -56,26 +62,27 @@ I see being niche-less as a feature, not a bug. There is too much remarkable wor
                       Technology by Chris Miller.
                     </p>
                   </li>
-                  <li className="border-l-2 border-base-content/20 pl-4">
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
-                      Watching
+                  <li className="border-base-content/20 border-l-2 pl-4">
+                    <span className="text-primary/70 text-xs font-semibold tracking-[0.2em] uppercase">
+                      Side Questing
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
-                      A heavy rotation of electrical and embedded engineering
-                      videos.
+                      3D printing. I&apos;ve brought the software I imagine to
+                      life, now it&apos;s time to do the same for physical
+                      objects.
                     </p>
                   </li>
                 </ul>
               </section>
 
               <aside className="space-y-6">
-                <div className="rounded-2xl border border-base-content/10 bg-base-200/40 p-6">
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-base-content/70">
+                <div className="border-base-content/10 bg-base-200/40 rounded-2xl border p-6">
+                  <h3 className="text-base-content/70 text-sm font-semibold tracking-[0.2em] uppercase">
                     Education
                   </h3>
-                  <dl className="mt-4 space-y-3 text-sm text-base-content/80">
+                  <dl className="text-base-content/80 mt-4 space-y-3 text-sm">
                     <div className="flex flex-col gap-1">
-                      <dt className="font-medium text-base-content">
+                      <dt className="text-base-content font-medium">
                         Georgia Institute of Technology
                       </dt>
                       <dd className="text-base-content/70">
@@ -83,7 +90,7 @@ I see being niche-less as a feature, not a bug. There is too much remarkable wor
                       </dd>
                     </div>
                     <div className="flex flex-col gap-1">
-                      <dt className="font-medium text-base-content">
+                      <dt className="text-base-content font-medium">
                         Arizona State University
                       </dt>
                       <dd className="text-base-content/70">
@@ -92,20 +99,20 @@ I see being niche-less as a feature, not a bug. There is too much remarkable wor
                     </div>
                   </dl>
                 </div>
-                <div className="rounded-2xl border border-base-content/10 bg-base-200/40 p-6">
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-base-content/70">
+                <div className="border-base-content/10 bg-base-200/40 rounded-2xl border p-6">
+                  <h3 className="text-base-content/70 text-sm font-semibold tracking-[0.2em] uppercase">
                     Beyond Tech
                   </h3>
-                  <dl className="mt-4 space-y-3 text-sm text-base-content/80">
+                  <dl className="text-base-content/80 mt-4 space-y-3 text-sm">
                     <div>
-                      <dt className="font-medium text-base-content">Sport</dt>
+                      <dt className="text-base-content font-medium">Sport</dt>
                       <dd className="text-base-content/70">
                         Love watching and playing sports, especially soccer and
                         Formula 1.
                       </dd>
                     </div>
                     <div>
-                      <dt className="font-medium text-base-content">Art</dt>
+                      <dt className="text-base-content font-medium">Art</dt>
                       <dd className="text-base-content/70">
                         I&apos;ve been learning and making digital art in my
                         free time. It&apos;s calming and a skill I&apos;ve
@@ -113,10 +120,10 @@ I see being niche-less as a feature, not a bug. There is too much remarkable wor
                       </dd>
                     </div>
                     <div>
-                      <dt className="font-medium text-base-content">Music</dt>
+                      <dt className="text-base-content font-medium">Music</dt>
                       <dd className="text-base-content/70">
-                        I used to play drums; now I&apos;m learning the ukulele
-                        after falling in love with its sound.
+                        I used to play the drums; now I&apos;m learning the
+                        ukulele after falling in love with its sound.
                       </dd>
                     </div>
                   </dl>
