@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
+import { siteConfig } from "./lib/site";
 
 // Font configurations
 const montserrat = Montserrat({
@@ -21,20 +22,36 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yashbhalchandra.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Yash Bhalchandra",
-    template: "%s | Yash Bhalchandra",
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Portfolio of Yash Bhalchandra — projects, writing, and professional experience.",
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Yash Bhalchandra",
-    description:
-      "Portfolio of Yash Bhalchandra — projects, writing, and professional experience.",
-    siteName: "Yash Bhalchandra",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    url: "/",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  email: siteConfig.email,
+  sameAs: [siteConfig.social.linkedin, siteConfig.social.github],
 };
 
 export default function RootLayout({
@@ -48,7 +65,19 @@ export default function RootLayout({
       className={`${montserrat.variable} ${inter.variable}`}
       suppressHydrationWarning
     >
-      <body className="flex flex-col min-h-screen">
+      <head>
+        {/* Runs before first paint so a saved dark theme never flashes light. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t==="portfolioLight"||t==="portfolioDark"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}`,
+          }}
+        />
+      </head>
+      <body className="flex min-h-screen flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <ThemeProvider>
           <Navbar />
           <main className="flex-grow pt-16 md:pt-20">{children}</main>
