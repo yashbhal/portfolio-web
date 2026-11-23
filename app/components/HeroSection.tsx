@@ -15,7 +15,7 @@ export const HeroSection = () => {
             </div>
 
             <p className="max-w-xl text-base md:text-lg text-base-content/80">
-I build things that excite me, learning whatever is required along the way. Looking for the next problem worth obsessing over.
+I build things that excite me, learning whatever is required along the way. Always looking for the next problem worth obsessing over.
             </p>
 
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center">

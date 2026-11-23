@@ -90,6 +90,14 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
   experiences: [
     {
       id: 1,
+      company: "Ancera",
+      role: "Forward Deployed Engineer",
+      description:
+        "Deploying software, hardware, diagnostics, and data. Whatever it takes to make food production safer, faster, and more profitable.",
+      startDate: "August 2026",
+    },
+    {
+      id: 2,
       company: "Petpin",
       role: "Everything Technical",
       description:
@@ -98,7 +106,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       endDate: "January 2026",
     },
     {
-      id: 2,
+      id: 3,
       company: "Residency Delta",
       role: "Founder",
       description:
@@ -107,7 +115,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       endDate: "August 2025",
     },
     {
-      id: 3,
+      id: 4,
       company: "The ViTAL Lab",
       role: "Graduate Research Assistant",
       description:
@@ -116,7 +124,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       endDate: "May 2025",
     },
     {
-      id: 4,
+      id: 5,
       company: "Microchip Technology",
       role: "Software Engineer",
       description:
@@ -125,7 +133,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       endDate: "April 2024",
     },
     {
-      id: 5,
+      id: 6,
       company: "KPIT",
       role: "Software Engineering Intern",
       description:
@@ -134,7 +142,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       endDate: "July 2022",
     },
     {
-      id: 6,
+      id: 7,
       company: "XR @ ASU",
       role: "Full-Stack Developer",
       description:
@@ -143,7 +151,7 @@ const workData: { projects: Project[]; experiences: Experience[] } = {
       endDate: "August 2021",
     },
     {
-      id: 7,
+      id: 8,
       company: "Meteor Studio",
       role: "AR Developer",
       description:

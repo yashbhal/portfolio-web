@@ -13,7 +13,7 @@ export const AboutSection = () => {
                 </h4>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold leading-tight text-base-content">
                   <span className="block">
-                    I like to build things that spark excitement for me and the
+                    I like to work on hard problems and build things that spark excitement for me and the
                     people who use them.
                   </span>
                 </h2>
@@ -21,7 +21,7 @@ export const AboutSection = () => {
 
               <div className="space-y-4 text-base-content/80 max-w-3xl">
                 <p className="text-base leading-relaxed">
-                  I&apos;m technology agnostic and chase the skills a
+                  I&apos;m pretty tool agnostic and chase the skills a
                   problem demands, even if that means learning something totally
                   outside my comfort zone.
                 </p>
@@ -42,9 +42,7 @@ I see being niche-less as a feature, not a bug. There is too much remarkable wor
                       Building
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
-                      Petpin, the first wearable lets see you life from your
-                      pet&apos;s perspective and lays the rails for the new
-                      digital pet economy.
+Forward Deployed @ Ancera. Deploying software, hardware, diagnostics, and data. Whatever it takes to make food production safer, faster, and more profitable.
                     </p>
                   </li>
                   <li className="border-l-2 border-base-content/20 pl-4">
@@ -58,11 +56,10 @@ I see being niche-less as a feature, not a bug. There is too much remarkable wor
                   </li>
                   <li className="border-l-2 border-base-content/20 pl-4">
                     <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
-                      Watching
+                      Side Questing
                     </span>
                     <p className="mt-2 text-sm leading-relaxed md:text-base">
-                      A heavy rotation of electrical and embedded engineering
-                      videos.
+                     3D printing. I can bring software I imagine to life, now it's time to bring physical objects to life.
                     </p>
                   </li>
                 </ul>
@@ -115,7 +112,7 @@ I see being niche-less as a feature, not a bug. There is too much remarkable wor
                     <div>
                       <dt className="font-medium text-base-content">Music</dt>
                       <dd className="text-base-content/70">
-                        I used to play drums; now I&apos;m learning the ukulele
+                        I used to play the drums; now I&apos;m learning the ukulele
                         after falling in love with its sound.
                       </dd>
                     </div>
