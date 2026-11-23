@@ -44,13 +44,15 @@ app/
 ├── page.tsx              # Landing page entry
 ├── globals.css           # Tailwind CSS and DaisyUI theme setup
 ├── components/           # Reusable UI sections
-├── Work/                 # Standalone Work page and data
+├── lib/                  # Site config, post loader, date helpers
+├── work/                 # Standalone Work page and data
 │   ├── page.tsx
 │   └── workData.ts
-└── Blog/                 # Blog index and dynamic routes
+└── blog/                 # Blog index and dynamic routes
     ├── page.tsx
     └── [slug]/           # Markdown-driven blog detail pages
 app/sitemap.ts            # Generates sitemap.xml at build
+content/blog/             # Markdown posts with validated frontmatter
 ```
 
 ## Core Components
@@ -58,7 +60,7 @@ app/sitemap.ts            # Generates sitemap.xml at build
 - **Navbar.tsx** sticky navigation with mobile menu, theme toggle, and shared horizontal padding via `container-responsive`
 - **HeroSection.tsx** landing hero with intro copy and calls to action
 - **AboutSection.tsx** story, philosophy, and recent work highlights
-- **CardSection.tsx** horizontal carousels for projects and experience with scroll controls
+- **WorkSection.tsx** horizontal carousels for projects and experience with scroll controls
 - **BlogLayout.tsx** shared wrapper for blog posts
 - **Footer.tsx** contact links and copyright icons via react-icons
 
@@ -70,8 +72,8 @@ app/sitemap.ts            # Generates sitemap.xml at build
 - Loading screen and scroll indicator add UX polish during navigation
 
 ## Data Flow
-- Work and project listings sourced from `app/Work/workData.ts`
-- Blog posts reside in `app/BlogPosts/*.md` and are consumed by the Blog routes
+- Work and project listings sourced from `app/work/workData.ts`
+- Blog posts reside in `content/blog/*.md` and are consumed by the blog routes
 - Theme state managed via `ThemeProvider` with `localStorage` persistence
 - Components receive typed props to encourage reuse and clarity
 
