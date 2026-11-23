@@ -29,7 +29,7 @@ const ScrollIndicator = () => {
     };
 
     // Check on resize (in case content reflow makes page scrollable)
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", checkScrollable);
 
     return () => {
@@ -41,29 +41,15 @@ const ScrollIndicator = () => {
   if (!isVisible) return null;
 
   return (
-    <div
-      className={`
-        fixed bottom-8 right-8 md:right-12
-        transition-all duration-500 z-40
-        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
-      `}
-    >
-      <div
-        className="flex items-center gap-3 px-4 py-3 
-                    bg-base-100/80 backdrop-blur-sm
-                    rounded-full shadow-lg
-                    border border-base-200/20"
-      >
-        <span className="text-sm font-medium text-base-content/70 hidden sm:block">
+    <div className="fixed right-8 bottom-8 z-40 transition-all duration-500 md:right-12">
+      <div className="bg-base-100/80 border-base-200/20 flex items-center gap-3 rounded-full border px-4 py-3 shadow-lg backdrop-blur-sm">
+        <span className="text-base-content/70 hidden text-sm font-medium sm:block">
           Scroll to explore
         </span>
-        <div className="relative w-5 h-5">
-          <div
-            className="absolute inset-0 animate-ping-slow rounded-full 
-                        bg-primary/20"
-          />
+        <div className="relative h-5 w-5">
+          <div className="animate-ping-slow bg-primary/20 absolute inset-0 rounded-full" />
           <svg
-            className="w-5 h-5 text-primary animate-bounce"
+            className="text-primary h-5 w-5 animate-bounce"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

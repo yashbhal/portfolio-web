@@ -6,11 +6,9 @@ interface BlogLayoutProps {
 
 const BlogLayout: React.FC<BlogLayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="bg-base-200 min-h-screen">
       <div className="container-responsive py-8 md:py-12 lg:py-16">
-        <div className="max-w-screen mx-auto">
-          <div className="space-y-6 md:space-y-8">{children}</div>
-        </div>
+        <div className="space-y-6 md:space-y-8">{children}</div>
       </div>
     </div>
   );

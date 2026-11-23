@@ -4,7 +4,13 @@
 /* Animated hero card: a self-advancing story carousel. Each slide is its own animated SVG scene; the progress bars drive
    rotation and support tap / swipe / keyboard navigation. */
 
-import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
+import {
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import type { PointerEvent, ReactNode } from "react";
 
 const SLIDE_MS = 3200;
@@ -44,7 +50,7 @@ const Eye = ({ cx, cy, r = 2.8 }: { cx: number; cy: number; r?: number }) => (
 );
 
 const Caption = ({ children }: { children: ReactNode }) => (
-  <p className="font-mono text-[11px] tracking-wider text-base-content/60">
+  <p className="text-base-content/60 font-mono text-[11px] tracking-wider">
     {children}
   </p>
 );
@@ -235,17 +241,33 @@ const StickFigure = ({
     <g strokeWidth="2.2">
       <circle cx="0" cy="-41" r="6" />
       <line x1="0" y1="-35" x2="0" y2="-15" />
-      <line x1="0" y1="-15" x2="0" y2="0">{swing(-22, 22, 0, -15)}</line>
-      <line x1="0" y1="-15" x2="0" y2="0">{swing(22, -22, 0, -15)}</line>
-      <line x1="0" y1="-30" x2="0" y2="-18">{swing(25, -25, 0, -30)}</line>
+      <line x1="0" y1="-15" x2="0" y2="0">
+        {swing(-22, 22, 0, -15)}
+      </line>
+      <line x1="0" y1="-15" x2="0" y2="0">
+        {swing(22, -22, 0, -15)}
+      </line>
+      <line x1="0" y1="-30" x2="0" y2="-18">
+        {swing(25, -25, 0, -30)}
+      </line>
       {briefcase ? (
         <>
           <line x1="0" y1="-30" x2="5" y2="-19" />
-          <rect x="2" y="-19" width="11" height="8" rx="1.5" fill="currentColor" className="text-accent/20" />
+          <rect
+            x="2"
+            y="-19"
+            width="11"
+            height="8"
+            rx="1.5"
+            fill="currentColor"
+            className="text-accent/20"
+          />
           <rect x="2" y="-19" width="11" height="8" rx="1.5" />
         </>
       ) : (
-        <line x1="0" y1="-30" x2="0" y2="-18">{swing(-25, 25, 0, -30)}</line>
+        <line x1="0" y1="-30" x2="0" y2="-18">
+          {swing(-25, 25, 0, -30)}
+        </line>
       )}
     </g>
   );
@@ -264,16 +286,34 @@ const ArriveScene = () => (
       fontSize="7"
       fill="currentColor"
       stroke="none"
-      className="font-mono uppercase tracking-wider text-base-content/50"
+      className="text-base-content/50 font-mono tracking-wider uppercase"
     >
       ancera
     </text>
-    <rect x="16" y="68" width="36" height="62" rx="3" fill="currentColor" className="text-base-content/4" />
+    <rect
+      x="16"
+      y="68"
+      width="36"
+      height="62"
+      rx="3"
+      fill="currentColor"
+      className="text-base-content/4"
+    />
     <rect x="16" y="68" width="36" height="62" rx="3" />
     {[78, 92, 106].map((y) =>
       [24, 38].map((x) => (
-        <rect key={`${x}-${y}`} x={x} y={y} width="6" height="6" rx="1" fill="currentColor" stroke="none" className="text-accent/70" />
-      ))
+        <rect
+          key={`${x}-${y}`}
+          x={x}
+          y={y}
+          width="6"
+          height="6"
+          rx="1"
+          fill="currentColor"
+          stroke="none"
+          className="text-accent/70"
+        />
+      )),
     )}
     <rect x="29" y="118" width="10" height="12" />
 
@@ -301,12 +341,36 @@ const ArriveScene = () => (
     </g>
 
     <g opacity="0">
-      <animate attributeName="opacity" values="0;1" begin="1.7s" dur="0.2s" fill="freeze" />
-      <circle cx="124" cy="68" r="7" fill="currentColor" stroke="none" className="text-success/20" />
-      <path d="M120.5 68 l2.5 2.5 5 -5" strokeWidth="2" className="text-success" />
+      <animate
+        attributeName="opacity"
+        values="0;1"
+        begin="1.7s"
+        dur="0.2s"
+        fill="freeze"
+      />
+      <circle
+        cx="124"
+        cy="68"
+        r="7"
+        fill="currentColor"
+        stroke="none"
+        className="text-success/20"
+      />
+      <path
+        d="M120.5 68 l2.5 2.5 5 -5"
+        strokeWidth="2"
+        className="text-success"
+      />
     </g>
 
-    <line x1="10" y1="130" x2="230" y2="130" strokeDasharray="2 6" className="text-base-content/30" />
+    <line
+      x1="10"
+      y1="130"
+      x2="230"
+      y2="130"
+      strokeDasharray="2 6"
+      className="text-base-content/30"
+    />
   </BlueprintShell>
 );
 
@@ -322,13 +386,43 @@ const DiagnosticsScene = () => (
     {/* Microfluidic channels into central assay chip */}
     <path d="M56 49 H74 L84 64" className="text-base-content/35" />
     <path d="M56 111 H74 L84 96" className="text-base-content/35" />
-    <circle r="2.8" opacity="0" fill="currentColor" stroke="none" className="text-accent">
+    <circle
+      r="2.8"
+      opacity="0"
+      fill="currentColor"
+      stroke="none"
+      className="text-accent"
+    >
       <animateMotion path="M56 49 H74 L84 64" dur="0.55s" fill="freeze" />
-      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="0.55s" fill="freeze" />
+      <animate
+        attributeName="opacity"
+        values="0;1;1;0"
+        keyTimes="0;0.15;0.85;1"
+        dur="0.55s"
+        fill="freeze"
+      />
     </circle>
-    <circle r="2.8" opacity="0" fill="currentColor" stroke="none" className="text-accent">
-      <animateMotion path="M56 111 H74 L84 96" begin="0.12s" dur="0.55s" fill="freeze" />
-      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" begin="0.12s" dur="0.55s" fill="freeze" />
+    <circle
+      r="2.8"
+      opacity="0"
+      fill="currentColor"
+      stroke="none"
+      className="text-accent"
+    >
+      <animateMotion
+        path="M56 111 H74 L84 96"
+        begin="0.12s"
+        dur="0.55s"
+        fill="freeze"
+      />
+      <animate
+        attributeName="opacity"
+        values="0;1;1;0"
+        keyTimes="0;0.15;0.85;1"
+        begin="0.12s"
+        dur="0.55s"
+        fill="freeze"
+      />
     </circle>
 
     {/* Central Optical Assay Chip */}
@@ -349,7 +443,7 @@ const DiagnosticsScene = () => (
       fontSize="7"
       fill="currentColor"
       stroke="none"
-      className="font-mono uppercase tracking-wider text-base-content/50"
+      className="text-base-content/50 font-mono tracking-wider uppercase"
     >
       ASSAY · SCAN
     </text>
@@ -411,8 +505,20 @@ const DiagnosticsScene = () => (
       opacity="0"
       className="text-accent"
     >
-      <animate attributeName="y1" values="48;118" begin="0.5s" dur="0.9s" fill="freeze" />
-      <animate attributeName="y2" values="48;118" begin="0.5s" dur="0.9s" fill="freeze" />
+      <animate
+        attributeName="y1"
+        values="48;118"
+        begin="0.5s"
+        dur="0.9s"
+        fill="freeze"
+      />
+      <animate
+        attributeName="y2"
+        values="48;118"
+        begin="0.5s"
+        dur="0.9s"
+        fill="freeze"
+      />
       <animate
         attributeName="opacity"
         values="0;1;1;0"
@@ -436,8 +542,19 @@ const DiagnosticsScene = () => (
         d="M0 -24 L18 -17 V-2 C18 11 10 20 0 25 C-10 20 -18 11 -18 -2 V-17 Z"
         className="text-success"
       />
-      <path d="M-6 0 l4 4 8 -9" strokeWidth="2.4" opacity="0" className="text-success">
-        <animate attributeName="opacity" values="0;1" begin="1.35s" dur="0.2s" fill="freeze" />
+      <path
+        d="M-6 0 l4 4 8 -9"
+        strokeWidth="2.4"
+        opacity="0"
+        className="text-success"
+      >
+        <animate
+          attributeName="opacity"
+          values="0;1"
+          begin="1.35s"
+          dur="0.2s"
+          fill="freeze"
+        />
       </path>
     </g>
   </BlueprintShell>
@@ -456,9 +573,32 @@ const ProductScene = () => (
       className="text-base-content/3"
     />
     <rect x="16" y="18" width="208" height="124" rx="10" />
-    <line x1="16" y1="38" x2="224" y2="38" strokeWidth="1.4" className="text-base-content/20" />
-    <line x1="85" y1="38" x2="85" y2="142" strokeDasharray="2 5" strokeWidth="1.4" className="text-base-content/20" />
-    <line x1="155" y1="38" x2="155" y2="142" strokeDasharray="2 5" strokeWidth="1.4" className="text-base-content/20" />
+    <line
+      x1="16"
+      y1="38"
+      x2="224"
+      y2="38"
+      strokeWidth="1.4"
+      className="text-base-content/20"
+    />
+    <line
+      x1="85"
+      y1="38"
+      x2="85"
+      y2="142"
+      strokeDasharray="2 5"
+      strokeWidth="1.4"
+      className="text-base-content/20"
+    />
+    <line
+      x1="155"
+      y1="38"
+      x2="155"
+      y2="142"
+      strokeDasharray="2 5"
+      strokeWidth="1.4"
+      className="text-base-content/20"
+    />
 
     {[
       ["SPEC", 50],
@@ -473,7 +613,7 @@ const ProductScene = () => (
         fontSize="7.5"
         fill="currentColor"
         stroke="none"
-        className="font-mono uppercase tracking-wider text-base-content/55"
+        className="text-base-content/55 font-mono tracking-wider uppercase"
       >
         {label}
       </text>
@@ -504,7 +644,14 @@ const ProductScene = () => (
         />
         <rect x="-26" y="-11" width="52" height="22" rx="5" strokeWidth="1.6" />
         <line x1="-18" y1="-2" x2="4" y2="-2" strokeWidth="2" />
-        <line x1="-18" y1="4" x2="-4" y2="4" strokeWidth="1.6" className="text-base-content/45" />
+        <line
+          x1="-18"
+          y1="4"
+          x2="-4"
+          y2="4"
+          strokeWidth="1.6"
+          className="text-base-content/45"
+        />
         <path
           d="M11 -1 l3 3 6 -6"
           strokeWidth="2.1"
@@ -556,11 +703,34 @@ const BuildScene = () => (
     </g>
 
     {/* empty app window with dashed slots */}
-    <rect x="108" y="24" width="118" height="104" rx="8" fill="currentColor" className="text-base-content/4" />
+    <rect
+      x="108"
+      y="24"
+      width="118"
+      height="104"
+      rx="8"
+      fill="currentColor"
+      className="text-base-content/4"
+    />
     <rect x="108" y="24" width="118" height="104" rx="8" />
-    <line x1="108" y1="36" x2="226" y2="36" strokeWidth="1.4" className="text-base-content/25" />
+    <line
+      x1="108"
+      y1="36"
+      x2="226"
+      y2="36"
+      strokeWidth="1.4"
+      className="text-base-content/25"
+    />
     {["text-error/70", "text-warning/70", "text-success/70"].map((cls, i) => (
-      <circle key={cls} cx={116 + i * 6} cy="30" r="1.6" fill="currentColor" stroke="none" className={cls} />
+      <circle
+        key={cls}
+        cx={116 + i * 6}
+        cy="30"
+        r="1.6"
+        fill="currentColor"
+        stroke="none"
+        className={cls}
+      />
     ))}
     {APP_BLOCKS.map(({ x, y, w, h }) => (
       <rect
@@ -578,11 +748,18 @@ const BuildScene = () => (
 
     {/* thrown blocks */}
     {APP_BLOCKS.map(({ x, y, w, h, kind }, k) => {
-      const cx = x + w / 2, cy = y + h / 2;
+      const cx = x + w / 2,
+        cy = y + h / 2;
       const begin = 0.35 + k * THROW_S;
       return (
         <g key={`${x}-${y}`} opacity="0">
-          <animate attributeName="opacity" values="0;1" begin={`${begin}s`} dur="0.08s" fill="freeze" />
+          <animate
+            attributeName="opacity"
+            values="0;1"
+            begin={`${begin}s`}
+            dur="0.08s"
+            fill="freeze"
+          />
           <animateMotion
             path={`M${HAND.x} ${HAND.y} Q${(HAND.x + cx) / 2} ${Math.min(cy, HAND.y) - 34} ${cx} ${cy}`}
             calcMode="spline"
@@ -594,19 +771,71 @@ const BuildScene = () => (
             fill="freeze"
           />
           <g>
-            <animateTransform attributeName="transform" type="scale" values="0.25;1" begin={`${begin}s`} dur="0.4s" fill="freeze" />
-            <rect x={-w / 2} y={-h / 2} width={w} height={h} rx="3" strokeWidth="1.6" fill="currentColor" fillOpacity="0.14" className="text-accent" />
+            <animateTransform
+              attributeName="transform"
+              type="scale"
+              values="0.25;1"
+              begin={`${begin}s`}
+              dur="0.4s"
+              fill="freeze"
+            />
+            <rect
+              x={-w / 2}
+              y={-h / 2}
+              width={w}
+              height={h}
+              rx="3"
+              strokeWidth="1.6"
+              fill="currentColor"
+              fillOpacity="0.14"
+              className="text-accent"
+            />
             {kind === "nav" && (
               <>
-                <circle cx={-w / 2 + 7} cy="0" r="2" fill="currentColor" stroke="none" className="text-accent" />
-                <line x1={w / 2 - 34} y1="0" x2={w / 2 - 24} y2="0" strokeWidth="1.6" className="text-base-content/50" />
-                <line x1={w / 2 - 18} y1="0" x2={w / 2 - 8} y2="0" strokeWidth="1.6" className="text-base-content/50" />
+                <circle
+                  cx={-w / 2 + 7}
+                  cy="0"
+                  r="2"
+                  fill="currentColor"
+                  stroke="none"
+                  className="text-accent"
+                />
+                <line
+                  x1={w / 2 - 34}
+                  y1="0"
+                  x2={w / 2 - 24}
+                  y2="0"
+                  strokeWidth="1.6"
+                  className="text-base-content/50"
+                />
+                <line
+                  x1={w / 2 - 18}
+                  y1="0"
+                  x2={w / 2 - 8}
+                  y2="0"
+                  strokeWidth="1.6"
+                  className="text-base-content/50"
+                />
               </>
             )}
             {kind === "stat" && (
               <>
-                <line x1={-w / 2 + 6} y1="-5" x2={-w / 2 + 20} y2="-5" strokeWidth="1.4" className="text-base-content/45" />
-                <line x1={-w / 2 + 6} y1="5" x2={-w / 2 + 28} y2="5" strokeWidth="3" className="text-base-content/80" />
+                <line
+                  x1={-w / 2 + 6}
+                  y1="-5"
+                  x2={-w / 2 + 20}
+                  y2="-5"
+                  strokeWidth="1.4"
+                  className="text-base-content/45"
+                />
+                <line
+                  x1={-w / 2 + 6}
+                  y1="5"
+                  x2={-w / 2 + 28}
+                  y2="5"
+                  strokeWidth="3"
+                  className="text-base-content/80"
+                />
               </>
             )}
           </g>
@@ -615,20 +844,74 @@ const BuildScene = () => (
     })}
 
     {/* chart fills in once its block lands, then the app goes live */}
-    <path d="M122 114 L142 106 L160 110 L180 99 L198 102 L212 96" strokeWidth="2" {...drawProps(2.15, "text-success", 0.4)} />
-    <rect x="108" y="24" width="118" height="104" rx="8" opacity="0" className="text-success">
-      <animate attributeName="opacity" values="0;0.8" begin="2.55s" dur="0.2s" fill="freeze" />
+    <path
+      d="M122 114 L142 106 L160 110 L180 99 L198 102 L212 96"
+      strokeWidth="2"
+      {...drawProps(2.15, "text-success", 0.4)}
+    />
+    <rect
+      x="108"
+      y="24"
+      width="118"
+      height="104"
+      rx="8"
+      opacity="0"
+      className="text-success"
+    >
+      <animate
+        attributeName="opacity"
+        values="0;0.8"
+        begin="2.55s"
+        dur="0.2s"
+        fill="freeze"
+      />
     </rect>
     <g opacity="0">
-      <animate attributeName="opacity" values="0;1" begin="2.55s" dur="0.2s" fill="freeze" />
-      <rect x="194" y="26" width="28" height="8" rx="4" fill="currentColor" stroke="none" className="text-success/20" />
-      <circle cx="200" cy="30" r="1.6" fill="currentColor" stroke="none" className="animate-pulse text-success" />
-      <text x="204" y="32.2" fontSize="6" fill="currentColor" stroke="none" className="font-mono text-success">
+      <animate
+        attributeName="opacity"
+        values="0;1"
+        begin="2.55s"
+        dur="0.2s"
+        fill="freeze"
+      />
+      <rect
+        x="194"
+        y="26"
+        width="28"
+        height="8"
+        rx="4"
+        fill="currentColor"
+        stroke="none"
+        className="text-success/20"
+      />
+      <circle
+        cx="200"
+        cy="30"
+        r="1.6"
+        fill="currentColor"
+        stroke="none"
+        className="text-success animate-pulse"
+      />
+      <text
+        x="204"
+        y="32.2"
+        fontSize="6"
+        fill="currentColor"
+        stroke="none"
+        className="text-success font-mono"
+      >
         live
       </text>
     </g>
 
-    <line x1="10" y1="132" x2="230" y2="132" strokeDasharray="2 6" className="text-base-content/30" />
+    <line
+      x1="10"
+      y1="132"
+      x2="230"
+      y2="132"
+      strokeDasharray="2 6"
+      className="text-base-content/30"
+    />
   </BlueprintShell>
 );
 
@@ -641,23 +924,46 @@ const DataScene = () => (
   <BlueprintShell>
     <PoultryGlyph x={10} y={22} />
     <SwineGlyph x={10} y={104} />
-    <path d="M46 40 C70 30 82 70 104 80" strokeDasharray="2 5" strokeWidth="1.4" className="text-base-content/20" />
-    <path d="M46 122 C70 132 82 90 104 80" strokeDasharray="2 5" strokeWidth="1.4" className="text-base-content/20" />
+    <path
+      d="M46 40 C70 30 82 70 104 80"
+      strokeDasharray="2 5"
+      strokeWidth="1.4"
+      className="text-base-content/20"
+    />
+    <path
+      d="M46 122 C70 132 82 90 104 80"
+      strokeDasharray="2 5"
+      strokeWidth="1.4"
+      className="text-base-content/20"
+    />
 
     {MESSY_TOKENS.map((token, k) => {
-      const path = k % 2 ? "M46 122 C70 132 82 90 104 80" : "M46 40 C70 30 82 70 104 80";
+      const path =
+        k % 2 ? "M46 122 C70 132 82 90 104 80" : "M46 40 C70 30 82 70 104 80";
       const begin = 0.1 + k * 0.18;
       return (
         <g key={token} opacity="0">
-          <animateMotion path={path} begin={`${begin}s`} dur="0.75s" fill="freeze" />
-          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" begin={`${begin}s`} dur="0.75s" fill="freeze" />
+          <animateMotion
+            path={path}
+            begin={`${begin}s`}
+            dur="0.75s"
+            fill="freeze"
+          />
+          <animate
+            attributeName="opacity"
+            values="0;1;1;0"
+            keyTimes="0;0.15;0.8;1"
+            begin={`${begin}s`}
+            dur="0.75s"
+            fill="freeze"
+          />
           <text
             y="2.5"
             textAnchor="middle"
             fontSize="7.5"
             fill="currentColor"
             stroke="none"
-            className="font-mono font-semibold text-error"
+            className="text-error font-mono font-semibold"
             transform={`rotate(${k % 2 ? 8 : -8})`}
           >
             {token}
@@ -667,39 +973,136 @@ const DataScene = () => (
     })}
 
     {/* processor */}
-    <rect x="96" y="60" width="40" height="40" rx="10" fill="currentColor" className="text-accent/12" />
+    <rect
+      x="96"
+      y="60"
+      width="40"
+      height="40"
+      rx="10"
+      fill="currentColor"
+      className="text-accent/12"
+    />
     <rect x="96" y="60" width="40" height="40" rx="10" />
     <g transform="translate(116 80)">
       <g className="animate-spin-slow text-accent">
         <circle r="6.5" strokeWidth="1.9" />
         {[0, 60, 120, 180, 240, 300].map((deg) => (
-          <line key={deg} x1="0" y1="-6.5" x2="0" y2="-10" strokeWidth="2" transform={`rotate(${deg})`} />
+          <line
+            key={deg}
+            x1="0"
+            y1="-6.5"
+            x2="0"
+            y2="-10"
+            strokeWidth="2"
+            transform={`rotate(${deg})`}
+          />
         ))}
       </g>
     </g>
 
     {/* clean table */}
-    <rect x="152" y="28" width="74" height="104" rx="8" fill="currentColor" className="text-base-content/4" />
+    <rect
+      x="152"
+      y="28"
+      width="74"
+      height="104"
+      rx="8"
+      fill="currentColor"
+      className="text-base-content/4"
+    />
     <rect x="152" y="28" width="74" height="104" rx="8" />
-    <text x="160" y="42" fontSize="6.5" fill="currentColor" stroke="none" className="font-mono uppercase tracking-wider text-base-content/50">
+    <text
+      x="160"
+      y="42"
+      fontSize="6.5"
+      fill="currentColor"
+      stroke="none"
+      className="text-base-content/50 font-mono tracking-wider uppercase"
+    >
       clean
     </text>
-    <line x1="152" y1="47" x2="226" y2="47" strokeWidth="1.2" className="text-base-content/20" />
+    <line
+      x1="152"
+      y1="47"
+      x2="226"
+      y2="47"
+      strokeWidth="1.2"
+      className="text-base-content/20"
+    />
     {CLEAN_ROWS.map((y, k) => {
       const t = 1.15 + k * 0.22;
       return (
         <g key={y}>
-          <rect width="5" height="5" rx="1.2" fill="currentColor" stroke="none" opacity="0" className="text-accent">
-            <animateMotion path={`M136 80 L158 ${y}`} begin={`${t - 0.25}s`} dur="0.25s" fill="freeze" />
-            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" begin={`${t - 0.25}s`} dur="0.25s" fill="freeze" />
+          <rect
+            width="5"
+            height="5"
+            rx="1.2"
+            fill="currentColor"
+            stroke="none"
+            opacity="0"
+            className="text-accent"
+          >
+            <animateMotion
+              path={`M136 80 L158 ${y}`}
+              begin={`${t - 0.25}s`}
+              dur="0.25s"
+              fill="freeze"
+            />
+            <animate
+              attributeName="opacity"
+              values="0;1;1;0"
+              keyTimes="0;0.1;0.9;1"
+              begin={`${t - 0.25}s`}
+              dur="0.25s"
+              fill="freeze"
+            />
           </rect>
-          <circle cx="161" cy={y} r="2" fill="currentColor" stroke="none" opacity="0" className="text-accent">
-            <animate attributeName="opacity" values="0;1" begin={`${t}s`} dur="0.1s" fill="freeze" />
+          <circle
+            cx="161"
+            cy={y}
+            r="2"
+            fill="currentColor"
+            stroke="none"
+            opacity="0"
+            className="text-accent"
+          >
+            <animate
+              attributeName="opacity"
+              values="0;1"
+              begin={`${t}s`}
+              dur="0.1s"
+              fill="freeze"
+            />
           </circle>
-          <line x1="168" y1={y} x2="188" y2={y} strokeWidth="2.4" {...drawProps(t, "text-base-content/70", 0.2)} />
-          <line x1="193" y1={y} x2="205" y2={y} strokeWidth="2.4" {...drawProps(t + 0.05, "text-base-content/40", 0.2)} />
-          <path d={`M211 ${y} l2 2 4 -4`} strokeWidth="1.8" opacity="0" className="text-success">
-            <animate attributeName="opacity" values="0;1" begin={`${t + 0.2}s`} dur="0.1s" fill="freeze" />
+          <line
+            x1="168"
+            y1={y}
+            x2="188"
+            y2={y}
+            strokeWidth="2.4"
+            {...drawProps(t, "text-base-content/70", 0.2)}
+          />
+          <line
+            x1="193"
+            y1={y}
+            x2="205"
+            y2={y}
+            strokeWidth="2.4"
+            {...drawProps(t + 0.05, "text-base-content/40", 0.2)}
+          />
+          <path
+            d={`M211 ${y} l2 2 4 -4`}
+            strokeWidth="1.8"
+            opacity="0"
+            className="text-success"
+          >
+            <animate
+              attributeName="opacity"
+              values="0;1"
+              begin={`${t + 0.2}s`}
+              dur="0.1s"
+              fill="freeze"
+            />
           </path>
         </g>
       );
@@ -716,7 +1119,12 @@ const Outfit = ({ stage }: { stage: number }) => {
   return (
     <g strokeWidth="2.2">
       {hero && (
-        <path fill="currentColor" fillOpacity="0.2" strokeWidth="1.8" className="text-accent">
+        <path
+          fill="currentColor"
+          fillOpacity="0.2"
+          strokeWidth="1.8"
+          className="text-accent"
+        >
           <animate
             attributeName="d"
             values="M117 82 Q102 88 84 104 Q92 106 90 114 Q102 108 108 116 Q114 100 123 83 Z; M117 82 Q100 84 82 96 Q90 100 86 108 Q100 104 104 112 Q112 98 123 83 Z; M117 82 Q102 88 84 104 Q92 106 90 114 Q102 108 108 116 Q114 100 123 83 Z"
@@ -727,25 +1135,81 @@ const Outfit = ({ stage }: { stage: number }) => {
       )}
       <circle cx="120" cy="70" r="7" />
       <line x1="120" y1="77" x2="120" y2="106" />
-      <path d={hero ? "M120 106 L108 128 M120 106 L132 128" : "M120 106 L112 128 M120 106 L128 128"} />
+      <path
+        d={
+          hero
+            ? "M120 106 L108 128 M120 106 L132 128"
+            : "M120 106 L112 128 M120 106 L128 128"
+        }
+      />
 
       {stage === 0 && (
         <>
           <line x1="120" y1="84" x2="110" y2="100" />
           <path d="M120 84 L128 98" />
-          <rect x="128" y="82" width="18" height="22" rx="2" strokeWidth="1.8" fill="currentColor" fillOpacity="0.06" />
+          <rect
+            x="128"
+            y="82"
+            width="18"
+            height="22"
+            rx="2"
+            strokeWidth="1.8"
+            fill="currentColor"
+            fillOpacity="0.06"
+          />
           <line x1="133" y1="82" x2="141" y2="82" strokeWidth="2.6" />
-          <line x1="132" y1="90" x2="142" y2="90" strokeWidth="1.4" className="text-base-content/50" />
-          <line x1="132" y1="95" x2="139" y2="95" strokeWidth="1.4" className="text-base-content/50" />
-          <path d="M136 99 l1.5 1.5 3 -3" strokeWidth="1.6" className="text-success" />
+          <line
+            x1="132"
+            y1="90"
+            x2="142"
+            y2="90"
+            strokeWidth="1.4"
+            className="text-base-content/50"
+          />
+          <line
+            x1="132"
+            y1="95"
+            x2="139"
+            y2="95"
+            strokeWidth="1.4"
+            className="text-base-content/50"
+          />
+          <path
+            d="M136 99 l1.5 1.5 3 -3"
+            strokeWidth="1.6"
+            className="text-success"
+          />
         </>
       )}
       {stage === 1 && (
         <>
           <path d="M120 84 L108 98 M120 84 L132 98" />
-          <rect x="106" y="80" width="28" height="18" rx="2" fill="currentColor" fillOpacity="0.08" strokeWidth="1.8" />
-          <line x1="110" y1="86" x2="122" y2="86" strokeWidth="1.8" className="text-info" />
-          <line x1="113" y1="91" x2="129" y2="91" strokeWidth="1.8" className="text-accent" />
+          <rect
+            x="106"
+            y="80"
+            width="28"
+            height="18"
+            rx="2"
+            fill="currentColor"
+            fillOpacity="0.08"
+            strokeWidth="1.8"
+          />
+          <line
+            x1="110"
+            y1="86"
+            x2="122"
+            y2="86"
+            strokeWidth="1.8"
+            className="text-info"
+          />
+          <line
+            x1="113"
+            y1="91"
+            x2="129"
+            y2="91"
+            strokeWidth="1.8"
+            className="text-accent"
+          />
           <path d="M102 101 H138" strokeWidth="2" />
         </>
       )}
@@ -753,34 +1217,80 @@ const Outfit = ({ stage }: { stage: number }) => {
         <>
           <path d="M120 84 L111 94 L116 104" />
           <path d="M120 84 L134 78" />
-          <rect x="134" y="56" width="26" height="24" rx="2" strokeWidth="1.8" fill="currentColor" fillOpacity="0.06" />
-          {[{ x: 139, h: 6 }, { x: 146, h: 11 }, { x: 153, h: 16 }].map(({ x, h }) => (
-            <rect key={x} x={x} y={76 - h} width="4" height={h} rx="1" fill="currentColor" stroke="none" className="text-accent/70" />
+          <rect
+            x="134"
+            y="56"
+            width="26"
+            height="24"
+            rx="2"
+            strokeWidth="1.8"
+            fill="currentColor"
+            fillOpacity="0.06"
+          />
+          {[
+            { x: 139, h: 6 },
+            { x: 146, h: 11 },
+            { x: 153, h: 16 },
+          ].map(({ x, h }) => (
+            <rect
+              key={x}
+              x={x}
+              y={76 - h}
+              width="4"
+              height={h}
+              rx="1"
+              fill="currentColor"
+              stroke="none"
+              className="text-accent/70"
+            />
           ))}
         </>
       )}
       {stage === 3 && (
         <>
-          <path d="M111 66 Q111 57 120 57 Q129 57 129 66 Z" fill="currentColor" strokeWidth="1.8" className="text-warning" />
-          <line x1="107" y1="66" x2="133" y2="66" strokeWidth="2.4" className="text-warning" />
+          <path
+            d="M111 66 Q111 57 120 57 Q129 57 129 66 Z"
+            fill="currentColor"
+            strokeWidth="1.8"
+            className="text-warning"
+          />
+          <line
+            x1="107"
+            y1="66"
+            x2="133"
+            y2="66"
+            strokeWidth="2.4"
+            className="text-warning"
+          />
           <line x1="120" y1="84" x2="110" y2="100" />
           <path d="M120 84 L134 74" />
           <g strokeWidth="1.8">
             <path d="M133 58 V72 A3 3 0 0 0 139 72 V58" />
             <line x1="131.5" y1="58" x2="140.5" y2="58" />
-            <rect x="134.5" y="66" width="3" height="7" fill="currentColor" stroke="none" className="text-accent" />
+            <rect
+              x="134.5"
+              y="66"
+              width="3"
+              height="7"
+              fill="currentColor"
+              stroke="none"
+              className="text-accent"
+            />
           </g>
         </>
       )}
       {hero && (
         <>
           <path d="M120 84 L108 94 L114 104 M120 84 L132 94 L126 104" />
-          <circle cx="120" cy="90" r="2.4" fill="currentColor" stroke="none" className="text-accent" />
-          {[
-            "M100 58 L94 52",
-            "M140 58 L146 52",
-            "M120 54 V46",
-          ].map((d) => (
+          <circle
+            cx="120"
+            cy="90"
+            r="2.4"
+            fill="currentColor"
+            stroke="none"
+            className="text-accent"
+          />
+          {["M100 58 L94 52", "M140 58 L146 52", "M120 54 V46"].map((d) => (
             <path key={d} d={d} strokeWidth="1.8" className="text-accent" />
           ))}
         </>
@@ -802,7 +1312,15 @@ const WhateverScene = () => {
 
   return (
     <BlueprintShell>
-      <ellipse cx="120" cy="132" rx="40" ry="4.5" fill="currentColor" stroke="none" className="text-base-content/10" />
+      <ellipse
+        cx="120"
+        cy="132"
+        rx="40"
+        ry="4.5"
+        fill="currentColor"
+        stroke="none"
+        className="text-base-content/10"
+      />
       <g transform="translate(120 132) scale(1.3) translate(-120 -129)">
         <g key={effectiveStage} className="animate-pop">
           <Outfit stage={effectiveStage} />
@@ -817,7 +1335,7 @@ const WhateverScene = () => {
           fontSize="8"
           fill="currentColor"
           stroke="none"
-          className="animate-pop font-mono uppercase tracking-widest text-base-content/55"
+          className="animate-pop text-base-content/55 font-mono tracking-widest uppercase"
         >
           {OUTFITS[effectiveStage]}
         </text>
@@ -829,8 +1347,14 @@ const WhateverScene = () => {
 /* ============================ Card + carousel ============================= */
 
 const SCENES: StoryScene[] = [
-  { caption: "forward deployed engineer @ ancera", render: () => <ArriveScene /> },
-  { caption: "rapid diagnostics for food safety", render: () => <DiagnosticsScene /> },
+  {
+    caption: "forward deployed engineer @ ancera",
+    render: () => <ArriveScene />,
+  },
+  {
+    caption: "rapid diagnostics for food safety",
+    render: () => <DiagnosticsScene />,
+  },
   { caption: "sometimes: product manager", render: () => <ProductScene /> },
   { caption: "sometimes: software engineer", render: () => <BuildScene /> },
   { caption: "sometimes: data wrangler", render: () => <DataScene /> },
@@ -842,9 +1366,11 @@ const StoryCarousel = ({ scenes }: { scenes: StoryScene[] }) => {
   const [idx, setIdx] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [held, setHeld] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const press = useRef<{ x: number; t: number } | null>(null);
   const reduced = usePrefersReducedMotion();
-  const paused = hovered || held || reduced;
+  const paused = hovered || held || focused || reduced || !playing;
   const go = (d: number) => setIdx((i) => (i + d + count) % count);
   const current = scenes[idx];
 
@@ -865,8 +1391,8 @@ const StoryCarousel = ({ scenes }: { scenes: StoryScene[] }) => {
   };
 
   return (
-    <div className="w-full rounded-2xl border border-base-content/10 bg-base-200/60 p-6 shadow-2xl backdrop-blur">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-base-content/70">
+    <div className="border-base-content/10 bg-base-200/60 w-full rounded-2xl border p-6 shadow-2xl backdrop-blur">
+      <p className="text-base-content/70 text-xs font-semibold tracking-[0.2em] uppercase">
         Currently
       </p>
       <div
@@ -874,12 +1400,18 @@ const StoryCarousel = ({ scenes }: { scenes: StoryScene[] }) => {
         aria-roledescription="carousel"
         aria-label={`What Yash is currently doing: ${current.caption}`}
         tabIndex={0}
-        className="relative mt-4 h-60 cursor-pointer touch-pan-y select-none rounded-xl text-base-content outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
+        className="text-base-content focus-visible:ring-accent/40 relative mt-4 h-60 cursor-pointer touch-pan-y rounded-xl outline-none select-none focus-visible:ring-2"
         onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(true)}
         onPointerLeave={() => {
           setHovered(false);
           setHeld(false);
           press.current = null;
+        }}
+        onFocus={() => setFocused(true)}
+        onBlur={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+            setFocused(false);
+          }
         }}
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
@@ -897,38 +1429,73 @@ const StoryCarousel = ({ scenes }: { scenes: StoryScene[] }) => {
           role="group"
           aria-roledescription="slide"
           aria-label={`${idx + 1} of ${count}: ${current.caption}`}
-          className="pointer-events-none absolute inset-0 flex animate-fade-in flex-col items-center justify-center gap-4"
+          className="animate-fade-in pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-4"
         >
           {current.render()}
           <Caption>{current.caption}</Caption>
         </div>
       </div>
-      <div className="mt-3 flex gap-1.5">
-        {scenes.map(({ caption }, i) => (
+      <div className="mt-3 flex items-center gap-3">
+        <div className="flex flex-1 gap-1.5">
+          {scenes.map(({ caption }, i) => (
+            <button
+              key={caption}
+              type="button"
+              aria-label={`Slide ${i + 1}: ${caption}`}
+              aria-current={i === idx}
+              onClick={() => setIdx(i)}
+              className="group flex-1 py-2"
+            >
+              <span className="bg-base-content/15 group-hover:bg-base-content/25 relative block h-1 overflow-hidden rounded-full transition-colors">
+                {i < idx && (
+                  <span className="bg-base-content/40 absolute inset-0" />
+                )}
+                {i === idx && (
+                  <span
+                    key={idx}
+                    className="bg-accent absolute inset-0 origin-left"
+                    style={{
+                      animation: `storyFill ${SLIDE_MS}ms linear forwards`,
+                      animationPlayState: paused ? "paused" : "running",
+                    }}
+                    onAnimationEnd={(e) =>
+                      e.target === e.currentTarget && go(1)
+                    }
+                  />
+                )}
+              </span>
+            </button>
+          ))}
+        </div>
+        {!reduced && (
           <button
-            key={caption}
             type="button"
-            aria-label={`Slide ${i + 1}: ${caption}`}
-            aria-current={i === idx}
-            onClick={() => setIdx(i)}
-            className="group flex-1 py-2"
+            onClick={() => setPlaying((value) => !value)}
+            aria-label={playing ? "Pause story" : "Play story"}
+            aria-pressed={!playing}
+            className="btn btn-ghost btn-xs btn-circle text-base-content/70"
           >
-            <span className="relative block h-1 overflow-hidden rounded-full bg-base-content/15 transition-colors group-hover:bg-base-content/25">
-              {i < idx && <span className="absolute inset-0 bg-base-content/40" />}
-              {i === idx && (
-                <span
-                  key={idx}
-                  className="absolute inset-0 origin-left bg-accent"
-                  style={{
-                    animation: `storyFill ${SLIDE_MS}ms linear forwards`,
-                    animationPlayState: paused ? "paused" : "running",
-                  }}
-                  onAnimationEnd={(e) => e.target === e.currentTarget && go(1)}
-                />
-              )}
-            </span>
+            {playing ? (
+              <svg
+                className="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden
+              >
+                <path d="M7 5h4v14H7zM13 5h4v14h-4z" />
+              </svg>
+            ) : (
+              <svg
+                className="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            )}
           </button>
-        ))}
+        )}
       </div>
     </div>
   );
